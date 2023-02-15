@@ -5,7 +5,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-cog"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">K3</div>
+                <div class="sidebar-brand-text mx-3">SIOKTIG</div>
             </a>
 
             <!-- Divider -->
@@ -28,7 +28,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="buttons.html">
+                <a class="nav-link" href="/perilaku">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Perilaku Aman Menurut K3</span></a>
             </li>
@@ -46,7 +46,7 @@
                         <h6 class="collapse-header">Tentang Kotak P3K:</h6>
                         <a class="collapse-item" href="utilities-color.html">Isi Kotak P3K & Lokasinya</a>
                         <a class="collapse-item" href="utilities-border.html">Input Pemakaian <br>Kotak P3K</a>
-                        <a class="collapse-item" href="utilities-animation.html">Diagram Penggunaan <br>P3K</a>
+                        <a class="collapse-item" href="/diagram">Diagram Penggunaan <br>P3K</a>
                     </div>
                 </div>
             </li>
@@ -78,16 +78,28 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="buttons.html">
+                <a class="nav-link" href="/percapaian">
                     <i class="fas fa-fw fa-trophy"></i>
                     <span>Pencapaian K3</span></a>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
+           
+             <div class="sidebar-heading">
+                    Edit
+                </div>
+             <li class="nav-item">
+                    <a class="nav-link" href="input_Pengumuman.html">
+                        <i class="fas fa-fw fa-eraser"></i>
+                        <span>Edit Pengumuman Terkini</span></a>
+                </li>
+            <div class="sidebar-heading">
+                    Buat User Baru
+                </div>
             <li class="nav-item">
-                <a class="nav-link" href="buttons.html">
-                    <i class="fas fa-fw fa-trophy"></i>
-                    <span>Sertifikat</span></a>
+                <a class="nav-link" href="/register">
+                    <i class="fas fa-fw fa-user-plus"></i>
+                    <span>Tambah User</span></a>
             </li>
 
             <!-- Divider -->

@@ -47,7 +47,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="/login">Sudah Punya Akun? Login!</a>
                             </div>
                         </div>
                     </div>

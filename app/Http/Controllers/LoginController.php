@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-
+Use \Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,6 +30,12 @@ class LoginController extends Controller
         // dd($request->all());
         return redirect('/login');
     }
+    function authenticated(Request $request, $user)
+{
+    $user->update([
+        'last_login' => Carbon::now()->toDateTimeString(),
+    ]);
+}
 
     public function register(){
         return view('layouts.login.register');

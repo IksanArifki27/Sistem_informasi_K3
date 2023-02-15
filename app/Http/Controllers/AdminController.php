@@ -11,4 +11,16 @@ class AdminController extends Controller
         // $date = Carbon::now();
         return view('layouts.admin.index',);
     }
+
+    public function pagePerilaku(){
+        return view('layouts.admin.PerilakuAman');
+    }
+
+    public function percapaian(){
+        return view('layouts.admin.percapaian');
+    }
+
+    public function diagram(){
+        return view('layouts.admin.diagram');
+    }
 }

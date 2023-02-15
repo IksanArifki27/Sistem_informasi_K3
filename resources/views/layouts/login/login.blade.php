@@ -27,8 +27,9 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
+                                        <a href="/"><i class="fa fa-times fw-bold"  aria-hidden="true"></i></a>
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Halaman Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Halaman Login </h1>
                                     </div>
                                     <form class="user" method="POST" action="/postLogin">
                                         @csrf
@@ -51,9 +52,11 @@
                                     </form>
                                     <hr>
                                     
+                                   
                                     <div class="text-center">
-                                        <a class="small" href="/register">Tidak punya akun? Daftar!</a>
+                                        <a class="small" href="/" >home</a>
                                     </div>
+                                   
                                 </div>
                             </div>
                         </div>

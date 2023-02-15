@@ -22,9 +22,17 @@ Route::get('/register',[LoginController::class,'register']);
 Route::post('/postRegister',[LoginController::class,'postRegister']);
 Route::get('/logout',[LoginController::class,'logout']);
 
+// halaman guest
+Route::get('/',function(){
+    return view('layouts.guest.index');
+});
+
 // halaman khusus admin & User terdaftar
 Route::group(['middleware' => ['auth']], function(){
     Route::get('/dashbord',[AdminController::class,'dashbord']);
+    Route::get('/perilaku',[AdminController::class,'pagePerilaku']);
+    Route::get('/percapaian',[AdminController::class,'percapaian']);
+    Route::get('/diagram',[AdminController::class,'diagram']);
 });
 Route::get('/car',function(){
     return view('layouts.carosel');
