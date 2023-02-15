@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// halaman login
+Route::get('/login',[LoginController::class,'login'])->name('login');
+Route::post('/postLogin',[LoginController::class,'postLogin']);
+Route::get('/register',[LoginController::class,'register']);
+Route::post('/postRegister',[LoginController::class,'postRegister']);
+Route::get('/logout',[LoginController::class,'logout']);
+
+// halaman khusus admin & User terdaftar
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/dashbord',[AdminController::class,'dashbord']);
+});
+Route::get('/car',function(){
+    return view('layouts.carosel');
 });
