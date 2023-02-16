@@ -44,7 +44,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tentang Kotak P3K:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Isi Kotak P3K & Lokasinya</a>
+                        <a class="collapse-item" href="/isip3k">Isi Kotak P3K & Lokasinya</a>
                         <a class="collapse-item" href="utilities-border.html">Input Pemakaian <br>Kotak P3K</a>
                         <a class="collapse-item" href="/diagram">Diagram Penggunaan <br>P3K</a>
                     </div>
@@ -89,9 +89,9 @@
                     Edit
                 </div>
              <li class="nav-item">
-                    <a class="nav-link" href="input_Pengumuman.html">
+                    <a class="nav-link" href="/inputPengumuman">
                         <i class="fas fa-fw fa-eraser"></i>
-                        <span>Edit Pengumuman Terkini</span></a>
+                        <span>Tambah Pengumuman Terkini</span></a>
                 </li>
             <div class="sidebar-heading">
                     Buat User Baru
