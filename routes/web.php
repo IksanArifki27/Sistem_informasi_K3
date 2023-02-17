@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoginController;
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,8 +37,16 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/diagram',[AdminController::class,'diagram']);
     Route::get('/isip3k_dept',[AdminController::class,'isip3k_dept']);
     Route::get('/inputPengumuman',[AdminController::class,'inputPengumuman']);
+    Route::get('/inputPemakaian',[AdminController::class,'inputPemakaian']);
     Route::post('/postPengumuman',[AdminController::class,'postPengumuman']);
+    Route::get('/editPengumuman',[AdminController::class,'editPengumuman']);
+    Route::post('/updatePengumuman/{id}',[AdminController::class,'updatePengumuman']);
+  
 });
+
+
+
+
 Route::get('/car',function(){
     return view('layouts.carosel');
 });

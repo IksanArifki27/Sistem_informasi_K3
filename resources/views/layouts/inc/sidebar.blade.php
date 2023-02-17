@@ -45,7 +45,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Tentang Kotak P3K:</h6>
                         <a class="collapse-item" href="/isip3k">Isi Kotak P3K & Lokasinya</a>
-                        <a class="collapse-item" href="utilities-border.html">Input Pemakaian <br>Kotak P3K</a>
+                        <a class="collapse-item" href="/inputPemakaian">Input Pemakaian <br>Kotak P3K</a>
                         <a class="collapse-item" href="/diagram">Diagram Penggunaan <br>P3K</a>
                     </div>
                 </div>
@@ -61,13 +61,21 @@
                 <div id="collapsePeringatan" class="collapse" aria-labelledby="headingPeringatan"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="utilities-color.html">Departemen</a>
-                        <a class="collapse-item" href="utilities-border.html">Departemen</a>
-                        <a class="collapse-item" href="utilities-animation.html">Departemen</a>
+                       
+                        <a class="collapse-item" href="peringatanProduksi.html">Departemen Poduksi</a>
+                        <a class="collapse-item" href="peringatanRnd.html">Departemen RND</a>
+                        <a class="collapse-item" href="peringatanQa.html">Departemen QA</a>
+                        <a class="collapse-item" href="peringatanQc.html">Departemen QC</a>
+                        <a class="collapse-item" href="peringatanEnginer.html">Departemen Engineering</a>
+                        <a class="collapse-item" href="peringatanCivil.html">Departemen Civil</a>
+                        <a class="collapse-item" href="peringatanIt.html">Departemen IT</a>
+                        <a class="collapse-item" href="peringatanAccounting.html">Departemen Accounting</a>
+                        <a class="collapse-item" href="peringatanFinance.html">Departemen Finance</a>
+                        <a class="collapse-item" href="peringatanHrd.html">Departemen HRD</a>
+                        <a class="collapse-item" href="peringatanK3.html">Departemen K3</a>
                     </div>
                 </div>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -90,8 +98,13 @@
                 </div>
              <li class="nav-item">
                     <a class="nav-link" href="/inputPengumuman">
-                        <i class="fas fa-fw fa-eraser"></i>
+                        <i class="fas fa-fw fa-plus-square"></i>
                         <span>Tambah Pengumuman Terkini</span></a>
+                </li>
+             <li class="nav-item">
+                    <a class="nav-link" href="/editPengumuman">
+                        <i class="fas fa-fw fa-eraser"></i>
+                        <span>Edit Pengumuman Terkini</span></a>
                 </li>
             <div class="sidebar-heading">
                     Buat User Baru

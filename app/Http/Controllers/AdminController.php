@@ -6,6 +6,8 @@ use App\Models\announcement;
 use Illuminate\Http\Request;
 Use \Carbon\Carbon;
 
+use function GuzzleHttp\Promise\all;
+
 class AdminController extends Controller
 {
     public function dashbord(){
@@ -45,5 +47,19 @@ class AdminController extends Controller
        }
     //    dd($request->all());
        return redirect('/inputPengumuman');
+    }
+
+    public function editPengumuman(){
+        $datas = announcement::all();
+        return view('layouts.admin.editPengumuman',compact('datas'));
+    }
+
+    public function updatePengumuman(Request $request,$id){
+     $data = announcement::find($id);
+     $data->update($request->all());
+     return redirect('/editPengumuman');
+    }
+    public function inputPemakaian(){
+        return view('layouts.admin.inputPemakaian');
     }
 }

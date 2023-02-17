@@ -27,7 +27,13 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
-                                        <a href="/"><i class="fa fa-times fw-bold"  aria-hidden="true"></i></a>
+                                    <div style="text-align:end">
+                                        <a href="/" class="text-center">
+                                            <i class="fa fa-times fw-bold" 
+                                                aria-hidden="true">
+                                            </i>
+                                        </a>
+                                    </div>
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Halaman Login </h1>
                                     </div>
