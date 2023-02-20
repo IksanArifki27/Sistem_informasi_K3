@@ -104,6 +104,11 @@
                            <span>Tambah Pengumuman Terkini</span></a>
                 </li>
                 <li class="nav-item">
+                       <a class="nav-link" href="/inputPenghargaan">
+                           <i class="fas fa-fw fa-plus-square"></i>
+                           <span>Tambah Penghargaan </span></a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/editPengumuman">
                         <i class="fas fa-fw fa-eraser"></i>
                         <span>Edit Pengumuman Terkini</span></a>

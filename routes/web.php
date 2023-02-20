@@ -28,6 +28,7 @@ Route::get('/logout',[LoginController::class,'logout']);
 // halaman guest
 Route::get('/',[GuestController::class,'index']);
 Route::get('/detail/{id}',[GuestController::class,'detailPengumuman']);
+Route::get('/kotakp3k',[GuestController::class,'kotakp3k']);
 
 // halaman khusus admin & User terdaftar
 Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
@@ -43,6 +44,7 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::get('/editPengumuman',[AdminController::class,'editPengumuman']);
     Route::post('/updatePengumuman/{id}',[AdminController::class,'updatePengumuman']);
     Route::get('/hapusData/{id}',[AdminController::class,'hapusPengumuman']);
+    Route::get('/inputPenghargaan',[AdminController::class,'inputPenghargaan']);
   
 });
 

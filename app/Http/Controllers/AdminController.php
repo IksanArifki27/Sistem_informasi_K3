@@ -68,4 +68,8 @@ class AdminController extends Controller
     public function inputPemakaian(){
         return view('layouts.admin.inputPemakaian');
     }
+
+    public function inputPenghargaan(){
+        return view('layouts.admin.inputPenghargaan');
+    }
 }

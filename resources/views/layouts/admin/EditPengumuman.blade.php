@@ -109,8 +109,8 @@
                                                         </div>
                                                         
                                                         <!-- GAMBAR TEXT BUTTON MODAL -->
-                                                        <label for="customFile" Class="col-form-label label-align" style=" font-size:20px;" name="foto">Masukkan Foto</label>
-                                                        <input type="file" accept="image/*" class="form-control-file" id="customFile" value="{{$item->foto}}">
+                                                        {{-- <label for="customFile" Class="col-form-label label-align" style=" font-size:20px;">Masukkan Foto</label>
+                                                        <input type="file" accept="image/*" class="form-control-file" name="foto" id="customFile" value="{{$item->foto}}"> --}}
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
