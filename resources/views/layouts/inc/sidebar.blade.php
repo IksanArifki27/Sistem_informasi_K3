@@ -93,27 +93,30 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
            
-             <div class="sidebar-heading">
-                    Edit
-                </div>
-             <li class="nav-item">
-                    <a class="nav-link" href="/inputPengumuman">
-                        <i class="fas fa-fw fa-plus-square"></i>
-                        <span>Tambah Pengumuman Terkini</span></a>
+            @if (auth()->user()->level == "admin")
+                    <div class="sidebar-heading">
+                        Edit
+                    </div>
+                    
+                <li class="nav-item">
+                       <a class="nav-link" href="/inputPengumuman">
+                           <i class="fas fa-fw fa-plus-square"></i>
+                           <span>Tambah Pengumuman Terkini</span></a>
                 </li>
-             <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="/editPengumuman">
                         <i class="fas fa-fw fa-eraser"></i>
                         <span>Edit Pengumuman Terkini</span></a>
                 </li>
-            <div class="sidebar-heading">
+                <div class="sidebar-heading">
                     Buat User Baru
                 </div>
-            <li class="nav-item">
-                <a class="nav-link" href="/register">
-                    <i class="fas fa-fw fa-user-plus"></i>
-                    <span>Tambah User</span></a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">
+                        <i class="fas fa-fw fa-user-plus"></i>
+                        <span>Tambah User</span></a>
+                </li>
+                @endif
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

@@ -56,36 +56,43 @@
                                     <tr>
                                         <td>{{$no++}} </td>
                                         <td>{{$data->judul}} </td>
-                                        <td>{{$data->konten}}</td>
+                                        <td>{{Str::limit($data->konten,150)}}</td>
                                         <td>
                                             <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 15rem;"
                                             src="{{asset('gambarPengumuman/'.$data->foto)}}" alt="...">
                                         </td>
                                         <td>
                                             <!-- BUTTON EDIT -->
-                                            <a href="" data-toggle="modal" data-target="#editdata{{$data->id}}" class="btn btn-primary btn-sm"><svg id="edit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon line" width="20" height="20"><path id="primary" d="M19.88,7,11,15.83,7,17l1.17-4,8.88-8.88A2.09,2.09,0,0,1,20,4,2.09,2.09,0,0,1,19.88,7ZM21,21H3" style="fill: none; stroke: rgb(255, 252, 252); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5;"></path></svg>  Edit</a> <br><br>
-
+                                           <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#modalEdit{{$data->id}}">
+                                            <svg id="edit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon line" width="20" height="20"><path id="primary" d="M19.88,7,11,15.83,7,17l1.17-4,8.88-8.88A2.09,2.09,0,0,1,20,4,2.09,2.09,0,0,1,19.88,7ZM21,21H3" style="fill: none; stroke: rgb(255, 252, 252); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5;"></path></svg>
+                                            edit
+                                            </button>
+                                            
                                             <!-- BUTTON HAPUS -->
-                                            <a href="" data-toggle="modal" data-target="#hapusModal" class="btn btn-danger btn-sm"><svg id="delete-alt-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon line" width="20" height="20"><path id="primary" d="M4,7H20M16,7V4a1,1,0,0,0-1-1H9A1,1,0,0,0,8,4V7m9.07,13.07L18,7H6l.93,13.07a1,1,0,0,0,1,.93h8.14A1,1,0,0,0,17.07,20.07ZM12,11v6" style="fill: none; stroke: rgb(254, 254, 254); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5;"></path></svg> Hapus</a> 
+                                           
+                                             <button type="button" class="btn btn-danger delete" data-toggle="modal" data-target="#modalHapus" data-id={{$data->id}}>
+                                                    <svg id="delete-alt-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon line" width="20" height="20"><path id="primary" d="M4,7H20M16,7V4a1,1,0,0,0-1-1H9A1,1,0,0,0,8,4V7m9.07,13.07L18,7H6l.93,13.07a1,1,0,0,0,1,.93h8.14A1,1,0,0,0,17.07,20.07ZM12,11v6" style="fill: none; stroke: rgb(254, 254, 254); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5;"></path></svg>	 Hapus
+                                            </button>
+                                            
                                         </td>
                                     </tr> 
                                     @endforeach  
                                         
-                                    @foreach ($datas as $item)
-                                    <!-- START EDIT PENGUMUMAN MODAL -->
-                                    <div class="modal fade" id="editdata{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold;">Edit Data Pengumuman</h5>
-                                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">×</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">    
-                                                        
-                                                    <form action="/updatePengumuman/{{$item->id}}" method="post" enctype="multipart/form-data">
-                                                        @csrf
+                                   <!-- Button trigger modal -->                                   
+                                    @foreach ($datas as $item) 
+                                    <!-- edit Modal -->
+                                    <div class="modal fade" id="modalEdit{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Update Pengumuman</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form action="/updatePengumuman/{{$item->id}}" method="post" enctype="multipart/form-data">
+                                                    @csrf
                                                         <div class="item form-group">
                                                             <!-- JUDUL PENGUMUMAN TEXT BUTTON MODAL -->
                                                         <label for="judul" class="col-form-label label-align" style=" font-size:20px;">Judul Pengumuman</label>
@@ -108,44 +115,17 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                                                         <button type="submit" class="btn btn-success">Simpan</button>
-                                                    </div> 
-                                                    
+                                                    </div>                                                   
                                                 </form>
-                                            </div>       
+                                        </div>
                                         </div>
                                     </div>
-                                    @endforeach
-                                    <!-- FINISH EDIT MODAL -->
-                                    
-                                    {{-- start hapus pengumuman Modal --}}
-                                    <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                    aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Apakah yakin untuk dihapus?</h5>
-                                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">×</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">Data yang anda pilih akan dihapus secara permanen</div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-success" type="button" data-dismiss="modal">Iya</button>
-                                                <a class="btn btn-danger" href="/editPengumuman">Tidak</a>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-
-                                    {{-- Finish hapus pengumuman Modal --}}
-                                  
-
-                                   
-
-                                   
+                                    @endforeach  
                                 </tbody>
                                 
                             </table>  
+                            {{$datas->links()}}
                         </div>     
                     </div>
 

@@ -46,11 +46,11 @@ class AdminController extends Controller
         $data->save();
        }
     //    dd($request->all());
-       return redirect('/inputPengumuman');
+       return redirect('/editPengumuman');
     }
 
     public function editPengumuman(){
-        $datas = announcement::all();
+        $datas = announcement::latest()->paginate(5);
         return view('layouts.admin.editPengumuman',compact('datas'));
     }
 
@@ -58,6 +58,12 @@ class AdminController extends Controller
      $data = announcement::find($id);
      $data->update($request->all());
      return redirect('/editPengumuman');
+    }
+
+    public function hapusPengumuman($id){
+        $data = announcement::find($id);
+        $data->delete();
+        return redirect('/editPengumuman');
     }
     public function inputPemakaian(){
         return view('layouts.admin.inputPemakaian');

@@ -27,9 +27,10 @@ Route::get('/logout',[LoginController::class,'logout']);
 
 // halaman guest
 Route::get('/',[GuestController::class,'index']);
+Route::get('/detail/{id}',[GuestController::class,'detailPengumuman']);
 
 // halaman khusus admin & User terdaftar
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::get('/dashbord',[AdminController::class,'dashbord']);
     Route::get('/perilaku',[AdminController::class,'pagePerilaku']);
     Route::get('/percapaian',[AdminController::class,'percapaian']);
@@ -41,7 +42,18 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/postPengumuman',[AdminController::class,'postPengumuman']);
     Route::get('/editPengumuman',[AdminController::class,'editPengumuman']);
     Route::post('/updatePengumuman/{id}',[AdminController::class,'updatePengumuman']);
+    Route::get('/hapusData/{id}',[AdminController::class,'hapusPengumuman']);
   
+});
+
+Route::group(['middleware' => ['auth','CekLevel:admin,user']],function(){
+    Route::get('/dashbord',[AdminController::class,'dashbord']);
+    Route::get('/perilaku',[AdminController::class,'pagePerilaku']);
+    Route::get('/percapaian',[AdminController::class,'percapaian']);
+    Route::get('/isip3k',[AdminController::class,'isiP3K']);
+    Route::get('/diagram',[AdminController::class,'diagram']);
+    Route::get('/isip3k_dept',[AdminController::class,'isip3k_dept']);
+    Route::get('/inputPemakaian',[AdminController::class,'inputPemakaian']);
 });
 
 

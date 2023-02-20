@@ -424,8 +424,9 @@
     <div class="row featurette my-2">
       <div class="col-md-7">
         <h2 class="featurette-heading fw-normal lh-1">{{$data->judul}}</h2>
-        <p class="lead">{{$data->konten}},({{$data->created_at->format('l d-m-Y')}}).</p>
+        <p class="lead">{{Str::limit($data->konten,160)}},<a href="/detail/{{$data->id}}">Baca lebih lanjut</a> ({{$data->created_at->format('l d-m-Y')}}).</p>
       </div>
+      
       <div class="col-md-5">
         <img src="{{asset('gambarPengumuman/'.$data->foto)}}" style="width:100%">
       </div>

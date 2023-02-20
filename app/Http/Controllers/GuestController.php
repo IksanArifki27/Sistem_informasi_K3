@@ -11,4 +11,9 @@ class GuestController extends Controller
     $datas = announcement::all();
     return view('layouts.Guest.index',compact('datas'));
     }
+
+    public function detailPengumuman($id){
+        $data = announcement::find($id);
+        return view('layouts.Guest.detail',compact('data'));
+    }
 }
