@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\announcement;
 use App\Models\Penghargaan;
+use App\Models\Sioktag;
 use Illuminate\Http\Request;
 Use \Carbon\Carbon;
 
@@ -99,6 +100,9 @@ class AdminController extends Controller
         $data->delete();
         return redirect('/editPenghargaan');
     }
-
+     public function tabelPeringatan(){
+        $datas = Sioktag::latest()->paginate(7);
+        return view('layouts.admin.tabelPeringatan',compact('datas'));
+    }
 
 }

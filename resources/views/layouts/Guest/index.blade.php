@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- Icon -->
-    <link rel="shorcut icon" href="assets/icon/nm.png" type="image/x-icon"/>
+    <link rel="shorcut icon" href="{{asset('img/k3.png')}}" type="image/x-icon"/>
 
     <!-- Fonts Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <h1 class="text-white fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">Keilmuan Keselamatan dan Kesehatan Kerja (K3)<br>PT. Interbat</h1>
+                    <h1 class="text-white fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">Kesehatan dan Keselamatan Kerja (K3)<br>PT. Interbat</h1>
                     <p class="text-white mb-4 text-opacity-75 animate__animated animate__fadeInUp animate__delay-1s">SLOGAN K3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quod adipisci ad officiis beatae at suscipit quisquam amet reprehenderit vero obcaecati, maiores saepe sint? Veniam fugit suscipit omnis velit quod.</p>
                     {{-- <button class="btn btn-primary btn-lg rounded-1 me-2 animate__animated animate__fadeInUp animate__delay-1s">Login</button> --}}
                     <a href="/login" class="btn btn-primary btn-lg rounded-1 me-2 animate__animated animate__fadeInUp animate__delay-1s">Login</a>
@@ -159,9 +159,11 @@
     @foreach ($penghargaans as $item)
      <div class="row align-items-center row-cols-lg-2 row-cols-1 my-3">
         <div class="col d-flex d-lg-block d-none">
-          <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="me-2" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="ms-5" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
         </div>
         <div class="col">
+          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> <i class="fa-regular fa-circle-check"></i> {{$item->judul}}
+          </h5>
           <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> <i class="fa-regular fa-circle-check"></i> {{$item->keterangan}}
           </h5>
           
@@ -298,7 +300,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <p class="text-center text-white copyright">&copy; copyright 2022 PT.INTERBAT K3</p>
+          <p class="text-center text-white copyright">&copy; copyright 2023 PT.INTERBAT K3</p>
         </div>
       </div>
     </div>

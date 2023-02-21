@@ -46,7 +46,6 @@ class SioktagController extends Controller
     public function updateData(Request $request,$id){
         $data = Sioktag::find($id);
         $data->update($request->all());
-        
         return response()->json([
             "msg" => "Data berhasil diUpdate",
             "data" => $data

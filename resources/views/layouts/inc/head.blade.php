@@ -4,6 +4,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    {{-- icon --}}
+    <link rel="shorcut icon" href="{{asset('img/k3.png')}}" type="image/x-icon"/>
+
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
