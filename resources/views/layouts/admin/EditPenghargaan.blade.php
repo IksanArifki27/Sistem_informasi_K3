@@ -31,13 +31,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800" >Tabel Data Pengumuman</h1>
+                    <h1 class="h3 mb-2 text-gray-800" >Tabel Data Penghargaan</h1>
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">
 
                         <div class="table-responsive">
-                            @if ($message = Session::get('success'))
+                             @if ($message = Session::get('success'))
                                 <div class="alert alert-success" role="alert">
                                    {{$message}}
                                 </div>
@@ -47,7 +47,7 @@
                                     <tr>
                                     <th>No.</th>
                                     <th>Judul</th>
-                                    <th>Isi Konten</th>
+                                    <th>Keterangan</th>
                                     <th>Gambar</th>
                                     <th>Aksi</th>
                                     </tr>
@@ -57,15 +57,14 @@
                                     @php
                                         $no = 1;
                                     @endphp
-                                    
                                     @foreach ($datas as $data)      
                                     <tr>
                                         <td>{{$no++}} </td>
-                                        <td><b>{{$data->judul}}</b></td>
-                                        <td>{{Str::limit($data->konten,150)}}</td>
+                                        <td> <b>{{$data->judul}}</b> </td>
+                                        <td>{{Str::limit($data->keterangan,150)}}</td>
                                         <td>
                                             <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 15rem;"
-                                            src="{{asset('gambarPengumuman/'.$data->foto)}}" alt="...">
+                                            src="{{asset('gambarPenghargaan/'.$data->foto)}}" alt="...">
                                         </td>
                                         <td>
                                             <!-- BUTTON EDIT -->
@@ -76,7 +75,7 @@
                                             
                                             <!-- BUTTON HAPUS -->
                                            
-                                             <button type="button" class="btn btn-danger delete" data-toggle="modal" data-target="#modalHapus" data-id={{$data->id}}>
+                                             <button type="button" class="btn btn-danger hapus" data-toggle="modal"  data-target="#modalHapus" data-id-hapus={{$data->id}}>
                                                     <svg id="delete-alt-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon line" width="20" height="20"><path id="primary" d="M4,7H20M16,7V4a1,1,0,0,0-1-1H9A1,1,0,0,0,8,4V7m9.07,13.07L18,7H6l.93,13.07a1,1,0,0,0,1,.93h8.14A1,1,0,0,0,17.07,20.07ZM12,11v6" style="fill: none; stroke: rgb(254, 254, 254); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5;"></path></svg>	 Hapus
                                             </button>
                                             
@@ -91,27 +90,27 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Update Pengumuman</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Update Data penghargaan</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                        <form action="/updatePengumuman/{{$item->id}}" method="post" enctype="multipart/form-data">
+                                        <form action="/updatePenghargaan/{{$item->id}}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                         <div class="item form-group">
                                                             <!-- JUDUL PENGUMUMAN TEXT BUTTON MODAL -->
-                                                        <label for="judul" class="col-form-label label-align" style=" font-size:20px;">Judul Pengumuman</label>
+                                                        <label for="judul" class="col-form-label label-align" style=" font-size:20px;">Judul Penghargaan</label>
                                                         <div>
                                                             <input type = "text" name="judul" id="judul_pengumuman" class="form-control" 
-                                                            placeholder= "example : Kunjungan Tim Audit" value="{{$item->judul}}"  required>
+                                                            placeholder= "example : juara1" value="{{$item->judul}}"  required>
                                                         </div>
                                                         
                                                         <!-- ISI KONTEN TEXTAREA BUTTON MODAL -->
                                                         <label for="konten" class="col-form-label label-align"   style="font-size:20px;">Isi Konten</label>
                                                         <div>
-                                                            <input type = "text" name="konten" id="judul_pengumuman" class="form-control" 
-                                                            placeholder= "example : Kunjungan Tim Audit" value="{{$item->konten}}"  required>
+                                                            <input type = "text" name="keterangan" id="judul_pengumuman" class="form-control" 
+                                                             value="{{$item->keterangan}}"  required>
                                                         </div>
                                                         
                                                         <!-- GAMBAR TEXT BUTTON MODAL -->
@@ -132,6 +131,7 @@
                                 
                             </table>  
                             {{$datas->links()}}
+                            
                         </div>     
                     </div>
 
@@ -158,7 +158,8 @@
     @include('layouts.inc.logout')
 
     <!-- Bootstrap core JavaScript-->
-   @include('layouts.inc.script')
+
+ @include('layouts.inc.script')
 
 </body>
 

@@ -151,12 +151,23 @@
           <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> <i class="fa-regular fa-circle-check"></i> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, nobis eos ut modi fugit unde non aspernatur aperiam.
           </h5>
           <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500"><i class="fa-regular fa-circle-check"></i> Yohana lorem dolor sit amet, consectetur adipisicing elit.</h5>
-          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600"><i class="fa-regular fa-circle-check"></i> iksan welek</h5>
           <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700"><i class="fa-regular fa-circle-check"></i> pakde fiken</h5>
           <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800"><i class="fa-regular fa-circle-check"></i> untag sby</h5>
         </div>
       </div>
     </div>
+    @foreach ($penghargaans as $item)
+     <div class="row align-items-center row-cols-lg-2 row-cols-1 my-3">
+        <div class="col d-flex d-lg-block d-none">
+          <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="me-2" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        </div>
+        <div class="col">
+          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> <i class="fa-regular fa-circle-check"></i> {{$item->keterangan}}
+          </h5>
+          
+        </div>
+      </div>
+    @endforeach
   </div>
   <!-- STOP -->
 

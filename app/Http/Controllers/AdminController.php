@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\announcement;
+use App\Models\Penghargaan;
 use Illuminate\Http\Request;
 Use \Carbon\Carbon;
 
@@ -46,7 +47,7 @@ class AdminController extends Controller
         $data->save();
        }
     //    dd($request->all());
-       return redirect('/editPengumuman');
+       return redirect('/editPengumuman')->with('success','Data Berhasil diBuat');
     }
 
     public function editPengumuman(){
@@ -57,7 +58,7 @@ class AdminController extends Controller
     public function updatePengumuman(Request $request,$id){
      $data = announcement::find($id);
      $data->update($request->all());
-     return redirect('/editPengumuman');
+     return redirect('/editPengumuman')->with('success','Data Berhasil Diupdate');
     }
 
     public function hapusPengumuman($id){
@@ -72,4 +73,32 @@ class AdminController extends Controller
     public function inputPenghargaan(){
         return view('layouts.admin.inputPenghargaan');
     }
+
+    public function postPenghargaan(Request $request){  
+    $data = Penghargaan::create($request->all());
+    if($request->hasFile('foto')){
+        $request->file('foto')->move('gambarPenghargaan/',  $request->file('foto')->getClientOriginalName());
+        $data->foto = $request->file('foto')->getClientOriginalName();
+        $data->save();
+       }
+       return redirect('/editPenghargaan')->with('success','Data berhasil dibuat');
+    }
+
+    public function editPenghargaan(){
+        $datas = Penghargaan::latest()->paginate(5);
+        return view('layouts.admin.EditPenghargaan',compact('datas'));
+    }
+
+    public function updatePenghargaan(Request $request,$id){
+        $data = Penghargaan::find($id);
+        $data->update($request->all());
+        return redirect('/editPenghargaan')->with('success','Data berhasil diupdate');
+    }
+    public function deletePenghargaan($id){
+        $data = Penghargaan::find($id);
+        $data->delete();
+        return redirect('/editPenghargaan');
+    }
+
+
 }

@@ -17,6 +17,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
  <script>
+   // delete pengumuman
 $('.delete').click(function(){
    var dataId = $(this).attr('data-id');
       swal({
@@ -27,8 +28,9 @@ $('.delete').click(function(){
    dangerMode: true,
    })
    .then((willDelete) => {
+
+      if (willDelete) {
       window.location = "/hapusData/"+dataId+""
-   if (willDelete) {
       swal("Selamat,Data Berhasil Dihapus!", {
          icon: "success",
       });
@@ -38,5 +40,25 @@ $('.delete').click(function(){
    });
 });
 
+ $('.hapus').click(function(){
+   var dataId = $(this).attr('data-id-hapus');
+      swal({
+   title: "Apa Anda yakin?",
+   text: "Apa Anda Yakin Menghapus Permanen Data Ini!",
+   icon: "warning",
+   buttons: true,
+   dangerMode: true,
+   })
+   .then((willDelete) => {
 
+      if (willDelete) {
+      window.location = "/deletePenghargaan/"+dataId+""
+      swal("Selamat,Data Berhasil Dihapus!", {
+         icon: "success",
+      });
+   } else {
+      swal("Data Tidak Jadi dihapus");
+   }
+   });
+});
  </script>

@@ -45,6 +45,10 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::post('/updatePengumuman/{id}',[AdminController::class,'updatePengumuman']);
     Route::get('/hapusData/{id}',[AdminController::class,'hapusPengumuman']);
     Route::get('/inputPenghargaan',[AdminController::class,'inputPenghargaan']);
+    Route::post('/postPenghargaan',[AdminController::class,'postPenghargaan']);
+    Route::get('/editPenghargaan',[AdminController::class,'editPenghargaan']);
+    Route::post('/updatePenghargaan/{id}',[AdminController::class,'updatePenghargaan']);
+    Route::get('/deletePenghargaan/{id}',[AdminController::class,'deletePenghargaan']);
   
 });
 

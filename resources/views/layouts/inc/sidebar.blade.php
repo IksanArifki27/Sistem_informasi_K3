@@ -113,6 +113,11 @@
                         <i class="fas fa-fw fa-eraser"></i>
                         <span>Edit Pengumuman Terkini</span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/editPenghargaan">
+                        <i class="fas fa-fw fa-eraser"></i>
+                        <span>Edit Penghargaan</span></a>
+                </li>
                 <div class="sidebar-heading">
                     Buat User Baru
                 </div>
