@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sioktags', function (Blueprint $table) {
+        Schema::create('penyelesaians', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
-            $table->string('nama');
-            $table->string('lokasi');
-            $table->longText('keterangan');
-            $table->string('penyebab');
-            $table->string('tindak_lanjut');
-            $table->string('PIC');
-            $table->date('DL');
+            $table->string('keterangan');
+            $table->string('status')->default('Closed');
+            $table->bigInteger('sioktag_id');
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sioktags');
+        Schema::dropIfExists('penyelesaians');
     }
 };

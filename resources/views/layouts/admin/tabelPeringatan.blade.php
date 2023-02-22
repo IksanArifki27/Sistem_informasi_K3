@@ -109,21 +109,27 @@
                                  @foreach ($datas as $data)
                                     <tr>
                                         <td>{{$no++}} </td>
-                                        <td>{{$data->created_at->format('d-m-Y')}} </td>
+                                        <td>{{$data->sioktag->created_at->format('d-m-Y')}} </td>
                                         <td>
                                             <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{asset('imgMobileSioktag/'.$data->foto)}}" alt="..." data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
+                                            src="{{asset('imgMobileSioktag/'.$data->sioktag->foto)}}" alt="..." data-toggle="modal" data-target="#ModalDetail{{$data->sioktag->id}}">
                                             {{-- <button type="button" class="btn btn-primary btn-sm ms-4" data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
                                                 view
                                             </button>  --}}
                                         </td>
-                                        <td><b>{{$data->lokasi}}</b></td>
-                                        <td><b>{{$data->nama}}</b></td>
-                                        <td>{{$data->keterangan}} .</td>
-                                        <td>{{$data->penyebab}} </td>
-                                        <td>{{$data->tindak_lanjut}}</td>
-                                        <td>{{$data->PIC}}</td>
-                                        <td>{{$data->DL}}</td>
+                                        <td><b>{{$data->sioktag->lokasi}}</b></td>
+                                        <td><b>{{$data->sioktag->nama}}</b></td>
+                                        <td>{{$data->sioktag->keterangan}} .</td>
+                                        <td>{{$data->sioktag->penyebab}} </td>
+                                        <td>{{$data->sioktag->tindak_lanjut}}</td>
+                                        <td>{{$data->sioktag->PIC}}</td>
+                                        <td>{{$data->sioktag->DL}}</td>
+                                        <td>{{$data->created_at->format('d-m-Y')}}</td>
+                                        <td>{{$data->status}}</td>
+                                        <td>
+                                           <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                            src="{{asset('fotoKeterangan/'.$data->keterangan)}}" alt="..." data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
+                                        </td>
                                         {{-- <td>
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
                                                 Klik Gambar
@@ -133,7 +139,7 @@
                                      @endforeach 
                                     <!-- Modal -->
                                     @foreach ($datas as $item) 
-                                    <div class="modal fade" id="ModalDetail{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="ModalDetail{{$item->sioktag->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">

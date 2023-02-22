@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redis;
 class SioktagController extends Controller
 {
     public function index(){
-        $data = Sioktag::all();
+        $data = Sioktag::with('penyelesaian')->get();
         return response()->json([
             'data' => $data
         ]);

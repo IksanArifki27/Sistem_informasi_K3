@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\PenyelesaianController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SioktagController;
+use App\Models\Penyelesaian;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,7 @@ Route::post('/sioktag',[SioktagController::class,'postData']);
 Route::get('/sioktag/{id}',[SioktagController::class,'showId']);
 Route::put('/sioktag/{id}',[SioktagController::class,'updateData']);
 Route::delete('/sioktag/{id}',[SioktagController::class,'deleteData']);
+
+Route::get('/penyelesaian',[PenyelesaianController::class,'index']);
+Route::post('/penyelesaian',[PenyelesaianController::class,'postPenyelesaian']);
+Route::get('/penyelesaian/{id}',[PenyelesaianController::class,'ShowDataId']);
