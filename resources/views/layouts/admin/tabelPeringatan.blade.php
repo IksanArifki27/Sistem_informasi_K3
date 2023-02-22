@@ -42,27 +42,46 @@
                                 <thead style="text-align: center;">
                                     <tr>
                                     <th>No.</th>
-                                    <th>Lokasi</th>
-                                    <th>Keterangan</th>
+                                    <th>tanggal Temuan</th>
                                     <th>Gambar</th>
-                                    <th>Details</th>
+                                    <th>Lokasi</th>
+                                    <th>fasilitas/Nama</th>
+                                    <th>Masalah</th>
+                                    <th>Penyebab</th>
+                                    <th>Tindak Lanjut</th>
+                                    <th>PIC</th>
+                                    <th>Batas Waktu</th>
+                                    <th>Waktu Penyelesaian</th>
+                                    <th>Status</th>
+                                    <th>Keterangan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <!-- DATA 1 -->
                                     <tr>
                                         <td>1.</td>
-                                        <td><b>Lantai 1 Departemen IT</b></td>
-                                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fugiat obcaecati sequi quasi tempora aliquid commodi voluptates, alias ipsam unde quaerat reiciendis corporis? Molestias fuga asperiores doloribus. Accusamus, voluptate saepe.</td>
+                                        <td>21-03-2023</td>
                                         <td>
-                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                            <img class="img-fluid px-3 px-sm-4 " style="width: 90rem;"
                                             src="{{asset('img/bahayajatuh.jpg')}}" alt="...">
                                         </td>
+                                        <td><b> Departemen IT </b></td>
+                                        <td>PC server</td>
+                                        <td>Ditemukan Kabel berserakan</td>
+                                        <td>Ditemukan Kabel berserakan</td>
+                                        <td>Teledor</td>
+                                        <td>Bpk Messi</td>
+                                        <td>22-03-2023</td>
+                                        <td>22-03-2023</td>
+                                        <td>Closed</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                                Klik Gambar
-                                            </button> 
+                                            <img class="img-fluid px-3 px-sm-4 " style="width: 90rem;"
+                                            src="{{asset('img/bahayajatuh.jpg')}}" alt="...">
                                         </td>
+                                            {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                Klik Gambar
+                                            </button>  --}}
+                                        
                                     </tr>
                                     
                                     <!-- Modal -->
@@ -90,17 +109,26 @@
                                  @foreach ($datas as $data)
                                     <tr>
                                         <td>{{$no++}} </td>
-                                        <td><b>{{$data->lokasi}}</b></td>
-                                        <td>{{$data->keterangan}} .</td>
+                                        <td>{{$data->created_at->format('d-m-Y')}} </td>
                                         <td>
                                             <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{asset('imgMobileSioktag/'.$data->foto)}}" alt="...">
+                                            src="{{asset('imgMobileSioktag/'.$data->foto)}}" alt="..." data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
+                                            {{-- <button type="button" class="btn btn-primary btn-sm ms-4" data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
+                                                view
+                                            </button>  --}}
                                         </td>
-                                        <td>
+                                        <td><b>{{$data->lokasi}}</b></td>
+                                        <td><b>{{$data->nama}}</b></td>
+                                        <td>{{$data->keterangan}} .</td>
+                                        <td>{{$data->penyebab}} </td>
+                                        <td>{{$data->tindak_lanjut}}</td>
+                                        <td>{{$data->PIC}}</td>
+                                        <td>{{$data->DL}}</td>
+                                        {{-- <td>
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
                                                 Klik Gambar
                                             </button> 
-                                        </td>
+                                        </td> --}}
                                     </tr>
                                      @endforeach 
                                     <!-- Modal -->

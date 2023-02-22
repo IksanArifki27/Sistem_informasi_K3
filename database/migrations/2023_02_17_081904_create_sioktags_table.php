@@ -19,6 +19,11 @@ return new class extends Migration
             $table->string('nama');
             $table->string('lokasi');
             $table->longText('keterangan');
+            $table->string('penyebab');
+            $table->string('tindak_lanjut');
+            $table->string('PIC');
+            $table->date('DL');
+            $table->bigInteger('penyelesaian_id');
             $table->timestamps();
         });
     }
