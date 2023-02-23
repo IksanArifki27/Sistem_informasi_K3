@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\announcement;
+use App\Models\Departemen;
 use App\Models\Penghargaan;
 use App\Models\Penyelesaian;
 use App\Models\Sioktag;
@@ -31,11 +32,16 @@ class AdminController extends Controller
     }
 
     public function isiP3K(){
-        return view('layouts.admin.isip3k');
+        $datas = Departemen::all();
+        return view('layouts.admin.isip3k',compact('datas'));
     }
 
     public function isip3k_dept(){
         return view('layouts.admin.isip3k_dept');
+    }
+    public function isip3k_dept_Detail($id){
+        $data = Departemen::find($id);
+        return view('layouts.Depart.DepartDetail',compact('data'));
     }
 
     public function inputPengumuman(){

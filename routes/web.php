@@ -54,7 +54,7 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     // route halaman Peringatan for sioktag mobile
     Route::get('/tabelPeringatan',[AdminController::class,'tabelPeringatan']);
    
-  
+    Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_dept_Detail']);
 });
 
 // halaman khusus admin & user terdaftar

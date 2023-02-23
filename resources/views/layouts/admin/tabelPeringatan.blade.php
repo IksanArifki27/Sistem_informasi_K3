@@ -128,7 +128,7 @@
                                         <td>{{$data->status}}</td>
                                         <td>
                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{asset('fotoKeterangan/'.$data->keterangan)}}" alt="..." data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
+                                            src="{{asset('fotoKeterangan/'.$data->keterangan)}}" alt="..." data-toggle="modal" data-target="#ModalDetailClosed{{$data->id}}">
                                         </td>
                                         {{-- <td>
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
@@ -144,14 +144,34 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">
-                                                        <b>Detail Gambar</b>
+                                                        <b>Detail Gambar Peringatan</b>
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('imgMobileSioktag/'.$item->foto)}}" alt="foto">
+                                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('imgMobileSioktag/'.$item->sioktag->foto)}}" alt="foto">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                     @endforeach    
+                                     {{-- modal gambar Closed --}}
+                                    @foreach ($datas as $item) 
+                                    <div class="modal fade" id="ModalDetailClosed{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                        <b>Detail Gambar Penyelesaian</b>
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('fotoKeterangan/'.$item->keterangan)}}" alt="foto">
                                                 </div>
                                             </div>
                                         </div>
