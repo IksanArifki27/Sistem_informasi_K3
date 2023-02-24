@@ -28,7 +28,7 @@ class LoginController extends Controller
             "remember_token" => Str::random(60),
         ]);
         // dd($request->all());
-        return redirect('/login');
+        return redirect('/dashbord');
     }
     function authenticated(Request $request, $user)
 {
@@ -39,6 +39,10 @@ class LoginController extends Controller
 
     public function register(){
         return view('layouts.login.register');
+    }
+    public function DataUser(){
+        $datas = User::all();
+        return view('layouts.login.daftarUser',compact('datas'));
     }
 
     public function logout(){

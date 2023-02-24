@@ -10,4 +10,8 @@ class Departemen extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function lokasi(){
+        return $this->hasMany(Lokasi::class);
+    }
 }

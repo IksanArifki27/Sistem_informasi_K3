@@ -35,7 +35,15 @@
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">
-
+                        <div class="my-4" >
+                            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="GET" action="/editPenghargaan">
+                        <div class="input-group border">
+                            <input type="search" name="search" class="form-control bg-light border-0 small" placeholder="Cari Judul ..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            
+                        </div>
+                            </form>
+                        </div>
                         <div class="table-responsive">
                              @if ($message = Session::get('success'))
                                 <div class="alert alert-success" role="alert">

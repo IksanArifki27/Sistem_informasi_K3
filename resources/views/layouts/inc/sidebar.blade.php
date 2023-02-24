@@ -1,7 +1,7 @@
      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashbord">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-cog"></i>
                 </div>
@@ -109,6 +109,11 @@
                     <a class="nav-link" href="/register">
                         <i class="fas fa-fw fa-user-plus"></i>
                         <span>Tambah User</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dataUser">
+                       <i class="fa fa-users" ></i>
+                        <span>Data User</span></a>
                 </li>
                 @endif
 

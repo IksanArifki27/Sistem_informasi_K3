@@ -51,6 +51,10 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::get('/editPenghargaan',[AdminController::class,'editPenghargaan']);
     Route::post('/updatePenghargaan/{id}',[AdminController::class,'updatePenghargaan']);
     Route::get('/deletePenghargaan/{id}',[AdminController::class,'deletePenghargaan']);
+
+    // daftar User
+    Route::get('/dataUser',[LoginController::class,'DataUser']);
+
     // route halaman Peringatan for sioktag mobile
     Route::get('/tabelPeringatan',[AdminController::class,'tabelPeringatan']);
    

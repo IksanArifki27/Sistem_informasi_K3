@@ -34,6 +34,42 @@
                     <h1 class="h3 mb-2 text-gray-800">Tabel Isi Kotak P3K Dept {{$data->nama}}</h1>
 
                     <!-- DataTales Example -->
+                    {{-- <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Lantai 1</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Barang</th>
+                                            <th>Stock Barang</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Hansaplast</td>
+                                            <td>7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Perban</td>
+                                            <td>5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Betadine</td>
+                                            <td>3</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div> --}}
+                     
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Lantai 1</h6>
@@ -69,11 +105,14 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    
+                   
+                    {{-- example looping --}}
+                    @foreach ($datas as $item)
+                       
+                            <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lantai 2</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">{{$item->departemen_id}} </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -106,6 +145,10 @@
                             </div>
                         </div>
                     </div>
+                      
+                   @endforeach
+                    <!-- DataTales Example -->
+                 
 
                 </div>
                 <!-- /.container-fluid -->

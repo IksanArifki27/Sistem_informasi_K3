@@ -71,41 +71,7 @@
                     </div>
 
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lantai 2</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Stock Barang</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Hansaplast</td>
-                                            <td>7</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Perban</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Betadine</td>
-                                            <td>3</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                
 
                 </div>
                 <!-- /.container-fluid -->
