@@ -1,4 +1,5 @@
  <script src="{{asset('template/vendor/jquery/jquery.min.js')}}"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{asset('template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
@@ -13,8 +14,11 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('template/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('template/js/demo/chart-pie-demo.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="{{asset('template/js/demo/chart-pie-demo2.js')}}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 
  <script>
    // delete pengumuman
@@ -61,5 +65,26 @@ $('.delete').click(function(){
    }
    });
 });
+
+  $(document).ready(function () {
+                $('.selectLokasi').on('change', function () {
+                let id = $(this).val();
+                $('.selectBarang').empty();
+                $('.selectBarang').append(`<option value="0" disabled selected>Processing...</option>`);
+                $.ajax({
+                type: 'GET',
+                url: 'formTambah/' + id,
+                success: function (response) {
+               //  var response = JSON.parse(response);
+               //  console.log(response);   
+                $('.selectBarang').empty();
+                $('.selectBarang').append(`<option value="0" disabled selected>-- Pilih barang--</option>`);
+                response.forEach(element => {
+                    $('.selectBarang').append(`<option value="${element['id']}">${element['nama']}</option>`);
+                    });
+                }
+            });
+        });
+    });
 
  </script>

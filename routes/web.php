@@ -62,8 +62,13 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
    
     Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_Detail']);
 
-    Route::get('/formTambah',[BarangMasukController::class,'formTambahStok']);
-    Route::get('/formTambah/ajax',[BarangMasukController::class,'ajax']);
+    // Route::get('/tambahStok',function(){
+    //     return view('layouts.BrgMasuk.tambahStok');
+    // });
+
+    Route::get('formTambah',[BarangMasukController::class,'formTambahStok'])->name('lokasi');
+    Route::get('formTambah/{id}',[BarangMasukController::class,'LokasiBarangId']);
+    Route::post('/postStok',[BarangMasukController::class,'postStok']);
 });
 
 // halaman khusus admin & user terdaftar
