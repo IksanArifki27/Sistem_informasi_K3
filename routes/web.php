@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeringatanController;
@@ -56,9 +57,13 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::get('/dataUser',[LoginController::class,'DataUser']);
 
     // route halaman Peringatan for sioktag mobile
-    Route::get('/tabelPeringatan',[AdminController::class,'tabelPeringatan']);
+    Route::get('/PeringatanClose',[AdminController::class,'tabelPeringatanClosed']);
+    Route::get('/Peringatan',[AdminController::class,'tabelPeringatan']);
    
-    Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_dept_Detail']);
+    Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_Detail']);
+
+    Route::get('/formTambah',[BarangMasukController::class,'formTambahStok']);
+    Route::get('/formTambah/ajax',[BarangMasukController::class,'ajax']);
 });
 
 // halaman khusus admin & user terdaftar

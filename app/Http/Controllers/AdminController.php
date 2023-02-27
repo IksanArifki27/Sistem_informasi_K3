@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\announcement;
+use App\Models\Barang;
 use App\Models\Departemen;
 use App\Models\Lokasi;
 use App\Models\Penghargaan;
@@ -33,17 +34,20 @@ class AdminController extends Controller
     }
 
     public function isiP3K(){
-        $datas = Departemen::all();
+        $datas = Lokasi::paginate(10);
         return view('layouts.admin.isip3k',compact('datas'));
     }
 
     public function isip3k_dept(){
         return view('layouts.admin.isip3k_dept');
     }
-    public function isip3k_dept_Detail($id){
-        $data = Departemen::find($id);
-        $datas = Lokasi::all();
-        return view('layouts.Depart.DepartDetail',compact('data','datas'));
+    public function isip3k_Detail($id){
+        $lokasi = Lokasi::find($id);
+        $datas =  Barang::where('lokasi_id',$id)->get();
+        return view('layouts.Detail.Detail',compact('datas','lokasi'));
+        
+     
+       
     }
 
     public function inputPengumuman(){
@@ -113,14 +117,17 @@ class AdminController extends Controller
         $data->delete();
         return redirect('/editPenghargaan');
     }
-     public function tabelPeringatan(Request $request){
+     public function tabelPeringatanClosed(Request $request){
         // $datas = Sioktag::with('penyelesaian')->latest()->paginate(7);
-        if ($request->has('search')) {
-            $datas = Penyelesaian::with('sioktag')->where('keterangan','LIKE','%' . $request->search. '%')->paginate(7);
-        }else{
-            $datas = Penyelesaian::with('sioktag')->latest()->paginate(7);
-        }
+        $datas = Penyelesaian::with('sioktag')->latest()->paginate(7);
+       
+        return view('layouts.admin.tabelPeringatanClose',compact('datas'));
+    }
+
+    public function tabelPeringatan(){
+        $datas = Sioktag::paginate(7);
         return view('layouts.admin.tabelPeringatan',compact('datas'));
+
     }
 
 }

@@ -2,10 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Lokasi;
+use App\Models\BarangMasuk;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Barang extends Model
 {
     use HasFactory;
+
+
+    public function lokasi(){
+        return $this->belongsTo(Lokasi::class);
+    }
+
+    public  function barangMasuk(){
+        return $this->hasMany(BarangMasuk::class);
+    }
 }

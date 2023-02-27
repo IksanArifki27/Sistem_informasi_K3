@@ -21,6 +21,7 @@ class LokasiSeeder extends Seeder
            ["nama" => "Cuci botol"],
            ["nama" => "Gudang Bahan 1"],
            ["nama" => "Gudang Bahan 2"],
+           ["nama" => "Gudang Jadi"],
            ["nama" => "Gudang Kemas"],
            ["nama" => "Gudang Policello"],
            ["nama" => "Household"],
@@ -57,7 +58,6 @@ class LokasiSeeder extends Seeder
            ["nama" => "Teknik (Kantor)"],
            ["nama" => "Teknik (Workshop)"],
            ["nama" => "TPS LB3"],
-           ["nama" => "Gudang Jadi"],
         ]);
         // Lokasi::insert([
         //    ["nama" => "Boiler"],

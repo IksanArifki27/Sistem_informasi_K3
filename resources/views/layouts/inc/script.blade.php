@@ -61,4 +61,5 @@ $('.delete').click(function(){
    }
    });
 });
+
  </script>

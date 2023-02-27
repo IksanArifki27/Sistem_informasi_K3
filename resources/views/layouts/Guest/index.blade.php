@@ -186,9 +186,9 @@
         <!-- CARD TIPS 1 -->
         <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <div class="card" style="width: 18rem;">
-            <img src="{{asset('img/lantai_licin.png')}}" class="card-img-top" alt="obat">
+            <img src="{{asset('img/body_harnes.jpg')}}" class="card-img-top" alt="obat">
             <div class="card-body">
-              <h6><b>Keterangan lantai licin</b></h6>
+              <h6><b>Memeriksa Kelayakan Full Body Harness</b></h6>
               <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, asperiores.</p>
               <a class=" text-primary" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">simak tipsnya</a>
             </div>
@@ -201,7 +201,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <p style="text-align: justify;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo ipsa eaque veritatis, odit incidunt est perspiciatis nisi alias necessitatibus dolor repellendus libero in sequi adipisci animi? Impedit, a, totam nobis natus repudiandae omnis cupiditate voluptatibus ea aliquam qui tenetur corrupti quia nemo perspiciatis recusandae? Aliquid quaerat reprehenderit impedit sapiente maiores?</p>
+                    {{-- <figure>
+                      <video src="/assets/lantai.mp4" width="400" controls></video>
+                      <figcaption>
+                        anda bisa lihat video lainnya  
+                        <a target="_blank" rel="noopener"  href="https://www.youtube.com/watch?v=NKPYtq1LOrE">klik</a>
+                      </figcaption>
+                    </figure> --}}
                   </div>
                 </div>
               </div>

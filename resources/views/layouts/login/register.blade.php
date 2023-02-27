@@ -38,6 +38,14 @@
                                     <input type="password" name="password" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="masukan password.. ">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Pilih Level </label>
+                                    <select class="form-control" id="exampleFormControlSelect1" name="level">
+                                      <option selected disabled>Pilih Jenis Level</option>
+                                      <option value="user">User</option>
+                                      <option value="admin">Admin</option>
+                                    </select>
+                                </div>
                                 
                                 {{-- <a href="login.html" class="btn btn-primary btn-user btn-block">
                                     Daftar akun

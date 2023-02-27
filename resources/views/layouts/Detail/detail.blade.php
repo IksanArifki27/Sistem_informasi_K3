@@ -31,9 +31,10 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tabel Isi Kotak P3K Dept {{$data->nama}}</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tabel Kotak P3K {{$lokasi->nama}} </h1>
 
-                    <!-- DataTales Example -->
+                
+                     
                     {{-- <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Lantai 1</h6>
@@ -69,50 +70,14 @@
                             </div>
                         </div>
                     </div> --}}
-                     
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lantai 1</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Stock Barang</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Hansaplast</td>
-                                            <td>7</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Perban</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Betadine</td>
-                                            <td>3</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                     
                    
                     {{-- example looping --}}
-                    @foreach ($datas as $item)
+
                        
                             <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">{{$item->departemen_id}} </h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Isi kotak P3k {{$lokasi->nama}} </h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -122,31 +87,29 @@
                                             <th>No</th>
                                             <th>Nama Barang</th>
                                             <th>Stock Barang</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $no = 1;
+                                        @endphp
+                                        @foreach ($datas as $item)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Hansaplast</td>
-                                            <td>7</td>
+                                            <td>{{$no++}}</td>
+                                            <td>{{$item->nama}} </td>
+                                            <td>{{$item->stok}}</td>
+                                            {{-- <td>{{$item->lokasi->nama}}</td> --}}
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Perban</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Betadine</td>
-                                            <td>3</td>
-                                        </tr>
+                                        @endforeach
+                                      
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                      
-                   @endforeach
+                     
+                   
                     <!-- DataTales Example -->
                  
 
