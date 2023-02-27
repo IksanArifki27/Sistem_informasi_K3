@@ -34,8 +34,17 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Lokasi P3k</h1>
                     </div>
-
-                    <div class="row">
+                        <div class="my-4 col-3">
+                             <div class="input-group border">
+                               <form action="/isip3k" method="get" enctype="multipart/form-data">
+                                 <input type="search" name="search" class="form-control bg-light border-0 small" placeholder="Cari Lokasi ..."
+                                    aria-label="Search" aria-describedby="basic-addon2">
+                               </form>
+                                
+                                </div>
+                        </div>
+                        <div class="row">
+                        
                             <!-- Departement 1 -->
                             @foreach ($datas as $data)      
                             <div class="col-xl-4 col-lg-5">

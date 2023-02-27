@@ -33,8 +33,13 @@ class AdminController extends Controller
         return view('layouts.admin.diagram');
     }
 
-    public function isiP3K(){
-        $datas = Lokasi::paginate(10);
+    public function isiP3K(Request $request){
+        if ($request->has('search')) {
+            $datas = Lokasi::where('nama','LIKE','%'. $request->search .'%')->paginate(10);
+        }else{
+            $datas = Lokasi::paginate(10);
+        }
+
         return view('layouts.admin.isip3k',compact('datas'));
     }
 
