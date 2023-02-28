@@ -56,7 +56,7 @@
                                 </thead>
                                 <tbody>
                                     <!-- DATA 1 -->
-                                    <tr>
+                                    {{-- <tr>
                                         <td>1.</td>
                                         <td>21-03-2023</td>
                                         <td>
@@ -73,7 +73,7 @@
                                         
                                         
                                     </tr>
-                                    
+                                     --}}
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">

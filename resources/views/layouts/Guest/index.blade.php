@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col text-center">
                     <h1 class="text-white fw-bold mb-4 animate__animated animate__fadeInUp animate__delay-1s">Kesehatan dan Keselamatan Kerja (K3)<br>PT. Interbat</h1>
-                    <p class="text-white mb-4 text-opacity-75 animate__animated animate__fadeInUp animate__delay-1s">SLOGAN K3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quod adipisci ad officiis beatae at suscipit quisquam amet reprehenderit vero obcaecati, maiores saepe sint? Veniam fugit suscipit omnis velit quod.</p>
+                    <p class="text-white mb-4 text-opacity-75 animate__animated animate__fadeInUp animate__delay-1s"> Keselamatan adalah prioritas utama kita,seperti benang rajut yang menghubungkan kehidupan. Jangan jadikannya kendor dengan tidak menghiraukan keselamatan.</p>
                     {{-- <button class="btn btn-primary btn-lg rounded-1 me-2 animate__animated animate__fadeInUp animate__delay-1s">Login</button> --}}
                     <a href="/login" class="btn btn-primary btn-lg rounded-1 me-2 animate__animated animate__fadeInUp animate__delay-1s">Login</a>
                 </div>
@@ -115,12 +115,12 @@
           </div>
         </div>
         <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 g-4">
-          <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+          {{-- <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
             <img src="{{asset('img/projects-5.jpg')}}" alt="unsplash.com" class="w-100 mb-3">
             <h4 class="fw-semibold" >ISO</h4>
             <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore architecto, veritatis accusantium in nihil eveniet alias. Odit ipsa aperiam culpa, alias reiciendis dolores eaque necessitatibus magni praesentium, nulla, iusto obcaecati.</p>
             <a class=" text-primary" href="detail_info.html">Lihat lebih lanjut</a>
-          </div>
+          </div> --}}
           @foreach ($datas as $data)     
           <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
             <img src="{{asset('gambarPengumuman/'.$data->foto)}}" alt="unsplash.com" class="w-100 mb-3">
@@ -143,7 +143,7 @@
           <h2 class="fw-semibold border-bottom pb-2 " data-aos="fade-right" data-aos-duration="1000" >Penghargaan <br/> Terkini</h2>
         </div>
       </div>
-      <div class="row align-items-center row-cols-lg-2 row-cols-1">
+      {{-- <div class="row align-items-center row-cols-lg-2 row-cols-1">
         <div class="col d-flex d-lg-block d-none">
           <img src="{{asset('img/projects-3.jpg')}}" class="me-2" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
         </div>
@@ -154,7 +154,7 @@
           <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700"><i class="fa-regular fa-circle-check"></i> pakde fiken</h5>
           <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800"><i class="fa-regular fa-circle-check"></i> untag sby</h5>
         </div>
-      </div>
+      </div> --}}
     </div>
     @foreach ($penghargaans as $item)
      <div class="row align-items-center row-cols-lg-2 row-cols-1 my-3">
@@ -183,13 +183,13 @@
       </div>
       <div class="row row-cols-lg-3 row-cols-1 g-4 pt-4 ">
 
-        <!-- CARD TIPS 1 -->
+        <!-- CARD TIPS 1 Full body Harness  -->
         <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <div class="card" style="width: 18rem;">
             <img src="{{asset('img/body_harnes.jpg')}}" class="card-img-top" alt="obat">
             <div class="card-body">
               <h6><b>Memeriksa Kelayakan Full Body Harness</b></h6>
-              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, asperiores.</p>
+              <p class="card-text">Full body harness memang berfungsi sebagai alat pelindung diri saat bekerja di ketinggian lebih dari 1,8 meter.</p>
               <a class=" text-primary" href="" data-bs-toggle="modal" data-bs-target="#exampleModal">simak tipsnya</a>
             </div>
             <!-- Modal -->
@@ -201,13 +201,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    {{-- <figure>
-                      <video src="/assets/lantai.mp4" width="400" controls></video>
+                    <figure>
+                      <video src="/vidio/body_harnes.mp4" width="400" controls></video>
                       <figcaption>
+                        <p class="card-text">Pastikan kamu menggunakan full body harness yang digunakan sesuai dengan standar lalu selalu cek webbing/tali pada full body harness tidak ada yang terpelintir dan ketahui batas maksimum untuk menahan beban.<br></p>
                         anda bisa lihat video lainnya  
                         <a target="_blank" rel="noopener"  href="https://www.youtube.com/watch?v=NKPYtq1LOrE">klik</a>
                       </figcaption>
-                    </figure> --}}
+                    </figure>
                   </div>
                 </div>
               </div>
@@ -234,7 +235,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam voluptatem expedita illo iure velit unde dolore temporibus iste exercitationem, tenetur neque, doloremque sint sapiente quidem nulla ratione? Quidem itaque eveniet dicta sed, perferendis illo at ipsum nemo iusto velit exercitationem minus culpa minima earum, officiis esse cum? Ipsum sunt laboriosam ratione culpa sed pariatur? Eligendi pariatur cum suscipit, et nobis modi dolor! Deserunt cumque aperiam repudiandae culpa! Provident distinctio amet, facere eaque officia facilis quasi praesentium aperiam sapiente deleniti maiores adipisci optio ducimus ut explicabo quisquam sed voluptatibus error vitae alias rerum laudantium! Beatae porro alias fugiat vel! Reiciendis, aperiam.</p>
+                    <figure>
+                      <video src="/vidio/K3_listrik.mp4" width="400" controls></video>
+                      <figcaption>
+                        <p>
+                          Sebelum itu, cek peralatan kamu apakah sesuai dan memenuhi standar, lalu Cek kabel-kabel dilantai jangan sampai menyebabkan tripping hazard. <b>Dan pastinya direncanakan secara matang serta dikerjakan oleh orang yang kompeten </b> <br>
+                        </p>  
+                        anda bisa lihat video lainnya  
+                            <a target="_blank" rel="noopener"  href="https://youtu.be/QigILRBMnRI">klik</a>
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               </div>
@@ -246,7 +256,7 @@
         <!-- CARD TIPS 3 -->
         <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <div class="card" style="width: 18rem;">
-            <img src="{{asset('img/bahayajatuh.jpg')}}" class="card-img-top" alt="obat">
+            <img src="{{asset('img/angkat.jpg')}}" class="card-img-top" alt="obat">
             <div class="card-body">
               <h6><b>Bahaya Benda Jatuh</b></h6>
               <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, asperiores.</p>
@@ -261,7 +271,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam voluptatem expedita illo iure velit unde dolore temporibus iste exercitationem, tenetur neque, doloremque sint sapiente quidem nulla ratione? Quidem itaque eveniet dicta sed, perferendis illo at ipsum nemo iusto velit exercitationem minus culpa minima earum, officiis esse cum? Ipsum sunt laboriosam ratione culpa sed pariatur? Eligendi pariatur cum suscipit, et nobis modi dolor! Deserunt cumque aperiam repudiandae culpa! Provident distinctio amet, facere eaque officia facilis quasi praesentium aperiam sapiente deleniti maiores adipisci optio ducimus ut explicabo quisquam sed voluptatibus error vitae alias rerum laudantium! Beatae porro alias fugiat vel! Reiciendis, aperiam.</p>
+                    <figure>
+                      <video src="/vidio/mengangkat_barang.mp4" width="400" controls></video>
+                      <figcaption>
+                        anda bisa lihat video lainnya  
+                        <a target="_blank" rel="noopener"  href="https://youtu.be/H08TlhCMDdg">klik</a>
+                      </figcaption>
+                    </figure>
                   </div>
                 </div>
               </div>

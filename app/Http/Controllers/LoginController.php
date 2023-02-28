@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 Use \Carbon\Carbon;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,11 +25,13 @@ class LoginController extends Controller
         User::create([
             "name" => $request->name,
             "email" => $request->email,
+            "level" => $request->level,
             "password" => bcrypt($request->password),
             "remember_token" => Str::random(60),
         ]);
         // dd($request->all());
         return redirect('/dashbord');
+       
     }
     function authenticated(Request $request, $user)
 {

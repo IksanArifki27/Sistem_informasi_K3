@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoginController;
@@ -79,7 +80,11 @@ Route::group(['middleware' => ['auth','CekLevel:admin,user']],function(){
     Route::get('/isip3k',[AdminController::class,'isiP3K']);
     Route::get('/diagram',[AdminController::class,'diagram']);
     Route::get('/isip3k_dept',[AdminController::class,'isip3k_dept']);
-    Route::get('/inputPemakaian',[AdminController::class,'inputPemakaian']);
+    Route::get('/inputPemakaian',[BarangKeluarController::class,'index']);
+    Route::get('/PeringatanClose',[AdminController::class,'tabelPeringatanClosed']);
+    Route::get('/Peringatan',[AdminController::class,'tabelPeringatan']);
+   
+    Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_Detail']);
 });
 
 

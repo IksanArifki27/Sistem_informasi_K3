@@ -85,9 +85,7 @@ class AdminController extends Controller
         $data->delete();
         return redirect('/editPengumuman');
     }
-    public function inputPemakaian(){
-        return view('layouts.admin.inputPemakaian');
-    }
+
 
     public function inputPenghargaan(){
         return view('layouts.admin.inputPenghargaan');

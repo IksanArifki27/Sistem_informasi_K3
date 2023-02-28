@@ -24,7 +24,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Daftar User</h1>
                             </div>
-                            <form class="user" action="postRegister" method="POST">
+                            <form class="user" action="/postRegister" method="POST">
                                 @csrf
                                 <div class="form-group" >
                                     <input type="text" name="name" class="form-control form-control-user" id="exampleInputEmail"
@@ -47,9 +47,6 @@
                                     </select>
                                 </div>
                                 
-                                {{-- <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Daftar akun
-                                </a> --}}
                                 <button class="btn btn-primary btn-user btn-block" type="submit">Daftar</button>
                                 <hr>
                             </form>
