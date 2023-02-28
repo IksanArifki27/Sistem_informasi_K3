@@ -65,7 +65,7 @@ $('.delete').click(function(){
    }
    });
 });
-
+// Tambah Stok / Barang Masuk
   $(document).ready(function () {
                 $('.selectLokasi').on('change', function () {
                 let id = $(this).val();
@@ -86,5 +86,28 @@ $('.delete').click(function(){
             });
         });
     });
+
+   // Input Stok / Barang Keluar
+ $(document).ready(function () {
+                $('.selectLokasiKeluar').on('change', function () {
+                let id = $(this).val();
+                $('.selectBarangKeluar').empty();
+                $('.selectBarangKeluar').append(`<option value="0" disabled selected>Processing...</option>`);
+                $.ajax({
+                type: 'GET',
+                url: 'inputPemakaian/' + id,
+                success: function (response) {
+               //  var response = JSON.parse(response);
+               //  console.log(response);   
+                $('.selectBarangKeluar').empty();
+                $('.selectBarangKeluar').append(`<option value="0" disabled selected>-- Pilih barang--</option>`);
+                response.forEach(element => {
+                    $('.selectBarangKeluar').append(`<option value="${element['id']}">${element['nama']}</option>`);
+                    });
+                }
+            });
+        });
+});
+
 
  </script>

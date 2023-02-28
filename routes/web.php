@@ -6,6 +6,7 @@ use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeringatanController;
+use App\Models\BarangKeluar;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,9 +68,15 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     //     return view('layouts.BrgMasuk.tambahStok');
     // });
 
+    // tambah Stok untuk admin
     Route::get('formTambah',[BarangMasukController::class,'formTambahStok'])->name('lokasi');
     Route::get('formTambah/{id}',[BarangMasukController::class,'LokasiBarangId']);
     Route::post('/postStok',[BarangMasukController::class,'postStok']);
+
+    // tambah Stok untuk admin & user
+    Route::get('inputPemakaian',[BarangKeluarController::class,'index']);
+    Route::get('inputPemakaian/{id}',[BarangKeluarController::class,'LokasiBarangKeluarId']);
+    Route::post('/postKeluarStok',[BarangKeluarController::class,'postKeluarStok']);
 });
 
 // halaman khusus admin & user terdaftar
@@ -83,8 +90,8 @@ Route::group(['middleware' => ['auth','CekLevel:admin,user']],function(){
     Route::get('/inputPemakaian',[BarangKeluarController::class,'index']);
     Route::get('/PeringatanClose',[AdminController::class,'tabelPeringatanClosed']);
     Route::get('/Peringatan',[AdminController::class,'tabelPeringatan']);
-   
     Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_Detail']);
+
 });
 
 
