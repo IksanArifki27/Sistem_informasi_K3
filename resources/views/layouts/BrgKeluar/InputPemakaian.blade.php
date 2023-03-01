@@ -33,6 +33,18 @@
                 <div class="container-fluid">
 
                     <div class="card shadow mb-4">
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button>	
+                                <strong>{{ $message }}</strong>
+                             </div>     
+                        @endif
+                        @if ($message = Session::get('error'))
+                            <div class="alert alert-danger alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button>	
+                                <strong>{{ $message }}</strong>
+                             </div>     
+                        @endif
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mt-3 mb-4"> <b> Form Pemakaian Barang di Kotak P3K </b></h1>
                         </div>

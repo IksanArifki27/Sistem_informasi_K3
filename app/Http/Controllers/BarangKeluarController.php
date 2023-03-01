@@ -29,9 +29,14 @@ class BarangKeluarController extends Controller
         BarangKeluar::create($request->all());
 
         $barang = Barang::find($request->barang_id);
-        $barang->stok -= $request->jumlah_barang_keluar;
-        $barang->save();
 
-        return redirect('/inputPemakaian');
+        if ($barang->stok < $request->jumlah_barang_keluar) {
+            return redirect('/inputPemakaian')->with('error','Jumlah Barang Melelbihi Stok');
+        }else{
+            $barang->stok -= $request->jumlah_barang_keluar;
+            $barang->save();
+            return redirect('/inputPemakaian')->with('success','Berhasil Mengambil Barang' );
+        }
+
     }
 }

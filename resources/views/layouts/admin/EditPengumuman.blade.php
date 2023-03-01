@@ -37,10 +37,11 @@
                     <div class="card shadow mb-4">
 
                         <div class="table-responsive">
-                            @if ($message = Session::get('success'))
-                                <div class="alert alert-success" role="alert">
-                                   {{$message}}
-                                </div>
+                           @if ($message = Session::get('success'))
+                            <div class="alert alert-success alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button>	
+                                <strong>{{ $message }}</strong>
+                             </div>     
                             @endif
                             <table class="table table-striped table-bordered">
                                 <thead style="text-align: center;">
