@@ -26,7 +26,8 @@ class AdminController extends Controller
     }
 
     public function percapaian(){
-        return view('layouts.admin.percapaian');
+        $data = Penghargaan::all();
+        return view('layouts.admin.percapaian',compact('data'));
     }
 
     public function diagram(){

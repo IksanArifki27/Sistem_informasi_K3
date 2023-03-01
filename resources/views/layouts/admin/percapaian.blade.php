@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <title>Halaman Pencapaian K3</title>
-   @include('layouts.inc.head')
+    @include('layouts.inc.head')
 
 </head>
 
@@ -14,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-       @include('layouts.inc.sidebar')
+      @include('layouts.inc.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -24,90 +23,79 @@
             <div id="content">
 
                 <!-- Topbar -->
-               @include('layouts.inc.topbar')
+                @include('layouts.inc.topbar')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Sertifikat yang Diperoleh K3</h1>
+                    <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                        <h1 class="h3 mb-0 text-gray-800"><b>Sertifikat yang Diperoleh K3</b></h1>
+                        
                     </div>
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Sertifikat 1</h6>
-                                </div>
+                   
+                    <div class="row">
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{asset('template/img/undraw_posting_photo.svg')}}" alt="...">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Jumlah Penghargaan</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
                                     </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw &rarr;</a>
                                 </div>
                             </div>
-
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Sertifikat 2</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{asset('template/img/undraw_posting_photo.svg')}}" alt="...">
-                                    </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw &rarr;</a>
-                                </div>
-                            </div>
-
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Sertifikat 1</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{asset('template/img/undraw_posting_photo.svg')}}" alt="...">
-                                    </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw &rarr;</a>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
+                    <hr style="height:2px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0)">
+                    <div class="row">
+                        <!-- Penghargaan 1-->
+                        <div class="col-xl-4 col-lg-5">
+                            @foreach ($data as $item) 
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 border-bottom-success">
+                                    <h6 class="m-0 font-weight-bold text-primary">{{$item->judul}}</h6>
+                                </div>
+                                <div class="card-body ">
+                                    <div class="text-center">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 20rem;"
+                                            src="{{asset('gambarPenghargaan/'. $item->foto )}}" alt="...">
+                                    </div>
+                                    <div style="text-align: justify;">
+                                        <p>{{$item->keterangan}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                             @endforeach
+                        </div>
+
+                        <!-- Penghargaan 1-->
+                       
+
+               
+                    </div>
+
+                            
 
                 </div>
-                <!-- /.container-fluid -->
-
             </div>
-            <!-- End of Main Content -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
+            @include('layouts.inc.footer')
             <!-- End of Footer -->
 
         </div>
@@ -122,10 +110,10 @@
     </a>
 
     <!-- Logout Modal-->
-   @include('layouts.inc.logout')
+    @include('layouts.inc.logout')
 
     <!-- Bootstrap core JavaScript-->
-   @include('layouts.inc.script')
+    @include('layouts.inc.script')
 
 </body>
 
