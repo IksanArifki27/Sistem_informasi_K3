@@ -30,13 +30,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800" >Tabel Data Peringatan Departemen</h1>
+                    <h1 class="h3 mb-2 text-gray-800" >Tabel Catatan Transaksi Keluar Obat P3K</h1>
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">
 
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
+                            <table class="table table-striped table-bordered text-center">
                                 <thead style="text-align: center;">
                                     <tr>
                                     <th>No.</th>
@@ -49,17 +49,20 @@
                                 </thead>
                                 <tbody>
                                     <!-- DATA 1 -->
+                                    @php
+                                        $no = 1;
+                                    @endphp
+                                    @foreach ($brg_klr as $item)     
                                     <tr>
-                                        <td>1.</td>
-                                        <td>yona</td>
-                                        <td>tepak</td>
-                                        <td>Lantai 1 Departemen IT</td>
-                                        <td><b>Lantai 1 Departemen IT</b></td>
-                                        <td><b>Lantai 1 Departemen IT</b></td>
-                                        
-                                        
+                                        <td>{{$no++}} </td>
+                                        <td>{{$item->nama}} </td>
+                                        <td>{{$item->barang->nama}} </td>
+                                        <td>{{$item->lokasi->nama}} </td>
+                                        <td>{{$item->jumlah_barang_keluar}} </td>
+                                        <td>{{$item->created_at->format('d-m-Y')}} </td>
                                         
                                     </tr>
+                                    @endforeach
                                     
                                                        
                                 </tbody> 
@@ -72,13 +75,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
+            @include('layouts.inc.footer')
             <!-- End of Footer -->
 
         </div>

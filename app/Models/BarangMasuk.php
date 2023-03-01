@@ -14,4 +14,8 @@ class BarangMasuk extends Model
     public function barang(){
         return $this->belongsTo(Barang::class);
     }
+
+    public function lokasi (){
+        return $this->belongsTo(Lokasi::class);
+    }
 }

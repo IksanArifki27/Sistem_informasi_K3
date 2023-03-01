@@ -34,7 +34,7 @@
 
                     <div class="card shadow mb-4">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mt-3 mb-4">Form Pemakaian Barang di Kotak P3K</h1>
+                            <h1 class="h4 text-gray-900 mt-3 mb-4"> <b> Form Pemakaian Barang di Kotak P3K </b></h1>
                         </div>
                         <div class="card-body">
                            <form class="user" method="POST" action="/postKeluarStok"    >

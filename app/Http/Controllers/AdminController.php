@@ -93,6 +93,10 @@ class AdminController extends Controller
     }
 
     public function postPenghargaan(Request $request){  
+        $request->validate([
+            "keterangan" => "max:200"
+        ]);
+
     $data = Penghargaan::create($request->all());
     if($request->hasFile('foto')){
         $request->file('foto')->move('gambarPenghargaan/',  $request->file('foto')->getClientOriginalName());
@@ -133,5 +137,6 @@ class AdminController extends Controller
         return view('layouts.admin.tabelPeringatan',compact('datas'));
 
     }
-
+  
 }
+

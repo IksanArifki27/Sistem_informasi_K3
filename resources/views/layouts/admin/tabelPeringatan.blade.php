@@ -32,7 +32,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800" >Tabel Data Peringatan Closed</h1>
+                    <h1 class="h3 mb-3 text-gray-800 text-center" > <b>Tabel Data Peringatan</b> </h1>
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">

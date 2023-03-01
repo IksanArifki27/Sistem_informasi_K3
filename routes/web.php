@@ -72,11 +72,13 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::get('formTambah',[BarangMasukController::class,'formTambahStok'])->name('lokasi');
     Route::get('formTambah/{id}',[BarangMasukController::class,'LokasiBarangId']);
     Route::post('/postStok',[BarangMasukController::class,'postStok']);
+    Route::get('/recordMasuk',[BarangMasukController::class,'index']);
 
-    // tambah Stok untuk admin & user
+    // keluar Stok untuk admin & user
     Route::get('inputPemakaian',[BarangKeluarController::class,'index']);
     Route::get('inputPemakaian/{id}',[BarangKeluarController::class,'LokasiBarangKeluarId']);
     Route::post('/postKeluarStok',[BarangKeluarController::class,'postKeluarStok']);
+    Route::get('/recordKeluar',[BarangKeluarController::class,'recordKeluar']);
 });
 
 // halaman khusus admin & user terdaftar

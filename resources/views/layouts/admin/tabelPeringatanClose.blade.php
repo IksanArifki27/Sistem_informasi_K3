@@ -32,7 +32,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800" >Tabel Data Peringatan Closed</h1>
+                    <h1 class="h3 mb-4 text-gray-800 text-center"><b> Tabel Data Peringatan Closed </b></h1>
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">
@@ -51,7 +51,7 @@
                                     <th>Tindak Lanjut</th>
                                     <th>PIC</th>
                                     <th>Batas Waktu</th>
-                                    <th>Waktu Penyelesaian</th>
+                                    <th>Tgl Penyelesaian </th>
                                     <th>Status</th>
                                     <th>Keterangan</th>
                                     </tr>

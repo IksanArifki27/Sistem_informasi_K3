@@ -11,8 +11,13 @@ class BarangKeluarController extends Controller
 {
     
     public function index(){
-        $lokasi = Lokasi::all();
+         $lokasi = Lokasi::all();
         return view('layouts.BrgKeluar.inputPemakaian',compact('lokasi'));
+    }
+
+    public function recordKeluar(){
+        $brg_klr = BarangKeluar::latest()->with('barang','lokasi')->paginate(10);
+        return view('layouts.BrgKeluar.TabelObatKeluar',compact('brg_klr'));
     }
 
     public function LokasiBarangKeluarId($id){

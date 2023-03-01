@@ -123,6 +123,22 @@
                         <i class="fas fa-fw fa-eraser"></i>
                         <span>Edit Penghargaan</span></a>
                 </li>
+                {{-- tabel transaksi --}}
+                <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseP3k2"
+                    aria-expanded="true" aria-controls="collapseP3k">
+                    <i class="fa fa-medkit"></i>
+                    <span>Tabel Record Barang</span>
+                </a>
+                <div id="collapseP3k2" class="collapse" aria-labelledby="headingP3k"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/recordMasuk">Tabel Barang Masuk</a>
+                        <a class="collapse-item" href="/recordKeluar"> Tabel Barang Keluar</a>
+                    </div>
+                </div>
+                </li>
+                {{-- end --}}
                 <div class="sidebar-heading">
                     Buat User Baru
                 </div>
@@ -136,6 +152,7 @@
                        <i class="fa fa-users" ></i>
                         <span>Data User</span></a>
                 </li>
+                
                 @endif
 
             <!-- Divider -->

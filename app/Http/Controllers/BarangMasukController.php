@@ -11,16 +11,12 @@ class BarangMasukController extends Controller
 {
     //
 
+
     public function index(){
-        $brg_msk = BarangMasuk::with('barang')->get();
-        
-      
-        return view('layouts.BrgMasuk.tambahStok',compact('brg_msk','barang'));
+        $brg_msk = BarangMasuk::latest()->with('barang','lokasi')->paginate(10);
+        return view('layouts.BrgMasuk.TabelObatMasuk',compact('brg_msk'));
     }
 
-    public function ajax(){
-        
-    }
 
     public function formTambahStok(){
         $lokasi = Lokasi::all();

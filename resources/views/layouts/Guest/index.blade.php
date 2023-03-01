@@ -91,8 +91,8 @@
         <div class="container-fluid">
             <div class="row row-cols-lg-2 row-cols-1">
                 <div class="col text-center py-5">
-                    <h2 >2000+</h2>
-                    <h2 class="fw-bold mb-2" >Menyelamatkan nyawa</h2>
+                    <h2 >0%</h2>
+                    <h2 class="fw-bold mb-2" >Total Rasio Kecelakaan</h2>
                     <p>dan menjaga karyawan dari ancaman bahaya </p>
                 </div>
                     
@@ -186,7 +186,7 @@
         <!-- CARD TIPS 1 Full body Harness  -->
         <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <div class="card" style="width: 18rem;">
-            <img src="{{asset('img/body_harnes.jpg')}}" class="card-img-top" alt="obat">
+            <img src="{{asset('img/body_harnes.png')}}" class="card-img-top" alt="obat">
             <div class="card-body">
               <h6><b>Memeriksa Kelayakan Full Body Harness</b></h6>
               <p class="card-text">Full body harness memang berfungsi sebagai alat pelindung diri saat bekerja di ketinggian lebih dari 1,8 meter.</p>
@@ -220,7 +220,7 @@
         <!-- CARD TIPS 2 -->
         <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <div class="card" style="width: 18rem;">
-            <img src="{{asset('img/danger.jpg')}}" class="card-img-top" alt="obat">
+            <img src="{{asset('img/bahaya_listrik.jpg')}}" class="card-img-top" alt="obat">
             <div class="card-body">
               <h6><b>Bahaya Tegangan Tinggi</b></h6>
               <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, asperiores.</p>
@@ -256,9 +256,9 @@
         <!-- CARD TIPS 3 -->
         <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
           <div class="card" style="width: 18rem;">
-            <img src="{{asset('img/angkat.jpg')}}" class="card-img-top" alt="obat">
+            <img src="{{asset('img/angkatBarang.png')}}" class="card-img-top" alt="obat">
             <div class="card-body">
-              <h6><b>Bahaya Benda Jatuh</b></h6>
+              <h6><b>Mengangkat Benda Berat</b></h6>
               <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, asperiores.</p>
               <a class=" text-primary" href="" data-bs-toggle="modal" data-bs-target="#exampleModal2">simak tipsnya</a>
             </div>
