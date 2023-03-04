@@ -44,7 +44,7 @@ class LoginController extends Controller
         return view('layouts.login.register');
     }
     public function DataUser(){
-        $datas = User::all();
+        $datas = User::latest()->paginate(15);
         return view('layouts.login.daftarUser',compact('datas'));
     }
 
