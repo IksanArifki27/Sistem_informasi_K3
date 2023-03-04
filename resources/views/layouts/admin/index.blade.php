@@ -41,11 +41,11 @@
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-1">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Waktu Sekarang</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{date('H:i')}} WIB</div>
+                                                Total Admin</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{($admin)}}</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                           <i class="fa fa-user fa-fw fa-2x text-gray-300"></i>
                                         </div>
                                         
                                     </div>

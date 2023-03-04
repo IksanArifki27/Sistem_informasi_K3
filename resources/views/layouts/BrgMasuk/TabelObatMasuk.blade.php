@@ -31,7 +31,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800" >Tabel Catatan Transaksi Masuk Obat P3K </h1>
+                    <h1 class="h3  text-gray-800 text-center mb-4" > <b>Tabel Catatan Transaksi Masuk Obat P3K</b> </h1>
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">

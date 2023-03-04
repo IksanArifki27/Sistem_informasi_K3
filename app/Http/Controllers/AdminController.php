@@ -27,7 +27,9 @@ class AdminController extends Controller
         $totalUser = User::count();
         $labels = $users->keys();
         $data = $users->values();
-        return view('layouts.admin.index',compact('labels','data','totalUser'));
+        $admin = User::where('level','admin')->count();
+      
+        return view('layouts.admin.index',compact('labels','data','totalUser','admin'));
     }
 
     public function pagePerilaku(){
