@@ -93,77 +93,150 @@
                   <h2 class="fw-semibold border-bottom pb-2 " data-aos="fade-right" data-aos-duration="1000" >Obat-obat yang tersedia</h2>
                 </div>
             </div>
-            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 justify-content-center ">
-                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr class="table-warning">
-                                        <th>No</th>
-                                        <th>Nama Barang</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Hansaplast</td> 
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Perban</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Betadine</td>   
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Panadol</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div><br><br>
+           
 
             <!-- GAMBAR  -->
-            <div class="row mb-4">
-                <div class="col">
-                  <h5 class="fw-semibold border-bottom pb-2 text-center" data-aos="fade-right" data-aos-duration="1000" >Gambar obat & keterangan</h5>
-                </div>
-            </div>
+           
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4  ">
                 <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{asset('img/obat1.jpg')}}" class="card-img-top" alt="obat">
+                        <img src="{{asset('img/isi_kotak/hansaplasr.jpeg')}}" class="card-img-top" alt="obat">
                         <div class="card-body">
-                          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, rem!</p>
+                          <h5 class="card-title">Hansaplast</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Plaster penutup luka untuk mencegah infeksi pada luka selama proses penyembuhan. </p>
                         </div>
                     </div>
                 </div>
+
                 <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{asset('img/obat1.jpg')}}" class="card-img-top" alt="obat">
+                        <img src="{{asset('img/isi_kotak/kasa.jpg')}}" class="card-img-top" alt="obat">
                         <div class="card-body">
-                          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, rem!</p>
+                          <h5 class="card-title">Kasa Steril</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Kasa steril digunakan untuk membersihkan luka dari kotoran, bakteri dan partikel untuk mencegah infeksi.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{asset('img/obat1.jpg')}}" class="card-img-top" alt="obat">
+                        <img src="{{asset('img/isi_kotak/perban.jpeg')}}" class="card-img-top" alt="obat">
                         <div class="card-body">
-                          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, rem!</p>
+                          <h5 class="card-title">Perban 5 & 10 cm</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Perban rol berfungsi untuk mengurangi pembengkakan, mempertahankan tekanan pada luka agar perdarahan bisa berhenti</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{asset('img/obat1.jpg')}}" class="card-img-top" alt="obat">
+                        <img src="{{asset('img/isi_kotak/plester.jpg')}}" class="card-img-top" alt="obat">
                         <div class="card-body">
-                          <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis, rem!</p>
+                          <h5 class="card-title">Plester 1,25cm</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Plester berguna melindungi luka dari terbentur atau kotor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/kapas.jpg')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Kapas 25g</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Kapas digunakan sebagai kapas pembalut untuk menutupi dan membersihkan luka agar tidak terjadi infeksi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/mitella.png')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Mitella</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Mitela dipergunakan untuk membalut bagian tubuh yang berbentuk bulat dan dapat pula untuk menggantungkan lengan yang cedera.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/gunting.jfif')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Gunting</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Gunting digunakan untuk memotong kain kas, perban, maupun plester saat menangani luka pada kulit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/peniti.jpg')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Peniti</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Peniti berguna untuk membuat balutan perban pada luka menjadi rapi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/sarungTangan.jpeg')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Sarung Tangan</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Sarung tangan ini berfungsi melindungi tangan Anda dari bahan-bahan kimia selama kegiatan penanganan dan pembersihan luka.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/masker.jpeg')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Masker</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Masker berfungsi untuk melindungi dari debu atau aroma bau yang menyengat, seperti bahan kimia yang berbahaya untuk dihirup oleh manusia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/pinset.jpg')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Pinset</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Pinset digunakan untuk membantu proses menjahit luka dan menjepit kasa sewaktu menekan luka.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/betadine.jpg')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Betadine</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Betadine bermanfaat untuk mencegah pertumbuhan dan membunuh kuman penyebab infeksi. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('img/isi_kotak/alcohol.jpg')}}" class="card-img-top" alt="obat">
+                        <div class="card-body">
+                          <h5 class="card-title">Alcohol 70%</h5>
+                          <hr>
+                          <p class="card-text" style="text-align:justify">Alkohol berfungsi sebagai cairan untuk mensterilkan gunting, pinset atau tangan penolong. Alkohol tidak boleh digunakan untuk membersihkan luka terbuka. </p>
                         </div>
                     </div>
                 </div>
@@ -180,7 +253,7 @@
       <div class="row row-cols-lg-3 row-cols-1 justify-content-center">
         <div class="col col-lg-6 mb-lg-0 mb-4">
           <h2 class="fw-bold text-white mb-3">Sioktig.</h2>
-          <p class="text-white-50" style="text-align: start;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos vero repellat, laborum deserunt consequatur ad minus cum ipsam et doloremque.</p>
+          <p class="text-white-50" style="text-align: start;">Keselamatan adalah prioritas utama kita,seperti benang rajut yang menghubungkan kehidupan. Jangan jadikannya kendor dengan tidak menghiraukan keselamatan.</p>
         </div>
         <div class="col col-lg-2 d-flex flex-column mb-lg-0 mb-4">
           <h5 class="fw-bold text-white">Menu</h5>

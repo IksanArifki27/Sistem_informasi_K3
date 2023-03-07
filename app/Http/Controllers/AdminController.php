@@ -33,20 +33,6 @@ class AdminController extends Controller
         $labels = $users->keys();
         $data = $users->values();
         $admin = User::where('level','admin')->count();
-        // end
-        // chart for donut
-        // $dataBarang = DB::table('lokasis as l')
-        // ->join('barangs as b','b.id','=','l.id')
-        // ->join('barang_keluars as bk','bk.id','=','l.id')
-        // ->select('l.*','b.*','bk.*', DB::raw('count(bk.barang_id) as total_keluar'))
-        // ->groupBy('bk.id')->get();
-        // $pLabel = [];
-        // $pData =[]; 
-        // foreach ($dataBarang as $datBarang) {
-        //     $pLabel[] = $datBarang->nama;
-        //     $pData[] = $datBarang->total_keluar;
-        // }
-
         $brg_masuk = BarangMasuk::count();
         $brg_keluar = BarangKeluar::count();
        
@@ -60,7 +46,8 @@ class AdminController extends Controller
 
     public function percapaian(){
         $data = Penghargaan::all();
-        return view('layouts.admin.percapaian',compact('data'));
+        $total = Penghargaan::count();
+        return view('layouts.admin.percapaian',compact('data','total'));
     }
 
     public function diagram(){
