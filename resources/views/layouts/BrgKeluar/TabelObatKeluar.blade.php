@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Tabel Transaksi Masuk</title>
+    <title>Tabel Transaksi Keluar</title>
     @include('layouts.inc.head')
 
 </head>
@@ -30,7 +30,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3  text-gray-800 text-center mb-4" > <b>Tabel Catatan Transaksi Masuk Obat P3K</b> </h1>
+                    <h1 class="h3  text-gray-800 text-center mb-4" > <b>Tabel Catatan Transaksi Obat Keluar P3K</b> </h1>
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">

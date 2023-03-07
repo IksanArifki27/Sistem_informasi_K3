@@ -119,7 +119,7 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Diagram Donut</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Jumlah Obat Masuk & Keluar</h6>
                                    
                                 </div>
                                 <!-- Card Body -->
@@ -128,15 +128,16 @@
                                         <canvas id="myPieChart"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
+                                       
+                                              
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
+                                            <i class="fas fa-circle text-primary "></i> Obat masuk
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
+                                            <i class="fas fa-circle text-success "></i> Obat Keluar
                                         </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
+                                       
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +216,7 @@
     @include('layouts.inc.script')
 
     <script>
-    
+// total user
 function number_format(number, decimals, dec_point, thousands_sep) {
     // *     example: number_format(1234.56, 2, ',', ' ');
     // *     return: '1 234,56'
@@ -241,7 +242,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
     return s.join(dec);
 }
 // Area Chart Example
- var labels =  {{ Js::from($labels) }};
+var labels =  {{ Js::from($labels) }};
 var users =  {{ Js::from($data) }};
 var ctx = document.getElementById("myAreaChart1");
 var myLineChart = new Chart(ctx, {
@@ -340,7 +341,42 @@ var myLineChart = new Chart(ctx, {
         },
     },
 });
+// end total user
 
+// pie chart
+
+
+// Pie Chart Example
+var ctx = document.getElementById("myPieChart");
+var myPieChart = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Obat Masuk','Obat keluar'],
+    datasets: [{
+      data: [{{$brg_masuk}},{{$brg_keluar}}],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc','#F7C04A'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      hoverBorderColor: "rgba(234, 236, 244, 1)",
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    tooltips: {
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+    },
+    legend: {
+      display: false
+    },
+    cutoutPercentage: 80,
+  },
+});
    </script>
     
 </body>

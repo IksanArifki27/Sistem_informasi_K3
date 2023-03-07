@@ -91,15 +91,15 @@
         <div class="container-fluid">
             <div class="row row-cols-lg-2 row-cols-1">
                 <div class="col text-center py-5">
-                    <h2 >0%</h2>
-                    <h2 class="fw-bold mb-2" >Total Rasio Kecelakaan</h2>
-                    <p>dan menjaga karyawan dari ancaman bahaya </p>
+                    <h2 >Dasar Hukum</h2>
+                    <h2 class="fw-bold mb-2" >Penerapan K3 pada Perusahaan</h2>
+                    <p>UU No 1 Tahun 1970 tentang Keselamatan Kerja, Permenaker No 5 Tahun 1996 tentang Sistem Manajemen Keselamatan dan Kesehatan Kerja dan Permenaker No 4 Tahun 1987 tentang Panitia Pembina Keselamatan dan Kesehatan Kerja (P2K3). </p>
                 </div>
                     
                 <div class="col text-center py-5 bg-warning">
-                    <h2>10+</h2>
-                    <h2 class="fw-bold mb-2">Project selesai</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                    <h2>Pencegahan</h2>
+                    <h2 class="fw-bold mb-2">Kecelakaan Kerja</h2>
+                    <p>Memberi pelatihan dan pendidikan mengenai K3, Mengikuti instruksi dengan serius, Laporkan bila menemukan hal yang tidak aman ke atasan </p>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
           <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
             <img src="{{asset('gambarPengumuman/'.$data->foto)}}" alt="unsplash.com" class="w-100 mb-3">
             <h4 class="fw-semibold">{{$data->judul}}</h4>
-            <p style="text-align: justify;">{{$data->konten}}.</p>
+            <p style="text-align: justify;">{{Str::limit($data->konten,100)}}.</p>
             <a class=" text-primary" href="/detail/{{$data->id}}">Lihat lebih lanjut</a>
           </div>
           @endforeach
@@ -301,7 +301,7 @@
       <div class="row row-cols-lg-3 row-cols-1 justify-content-center">
         <div class="col col-lg-6 mb-lg-0 mb-4">
           <h2 class="fw-bold text-white mb-3">Sioktig.</h2>
-          <p class="text-white-50" style="text-align: start;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos vero repellat, laborum deserunt consequatur ad minus cum ipsam et doloremque.</p>
+          <p class="text-white-50" style="text-align: start;">Keselamatan adalah prioritas utama kita,seperti benang rajut yang menghubungkan kehidupan. Jangan jadikannya kendor dengan tidak menghiraukan keselamatan.</p>
         </div>
         <div class="col col-lg-2 d-flex flex-column mb-lg-0 mb-4">
           <h5 class="fw-bold text-white">Menu</h5>

@@ -9,16 +9,21 @@ use App\Models\Sioktag;
 use App\Models\Departemen;
 use App\Models\Penghargaan;
 use App\Models\announcement;
+use App\Models\BarangKeluar;
+use App\Models\BarangMasuk;
 use App\Models\Penyelesaian;
 use Illuminate\Http\Request;
 Use \Carbon\Carbon;
 
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Stmt\Foreach_;
+
 use function GuzzleHttp\Promise\all;
 
 class AdminController extends Controller
 {
     public function dashbord(){
+        // chart for data user
          $users = User::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
                     ->whereYear('created_at', date('Y'))
                     ->groupBy(DB::raw("month_name"))
@@ -28,8 +33,25 @@ class AdminController extends Controller
         $labels = $users->keys();
         $data = $users->values();
         $admin = User::where('level','admin')->count();
-      
-        return view('layouts.admin.index',compact('labels','data','totalUser','admin'));
+        // end
+        // chart for donut
+        // $dataBarang = DB::table('lokasis as l')
+        // ->join('barangs as b','b.id','=','l.id')
+        // ->join('barang_keluars as bk','bk.id','=','l.id')
+        // ->select('l.*','b.*','bk.*', DB::raw('count(bk.barang_id) as total_keluar'))
+        // ->groupBy('bk.id')->get();
+        // $pLabel = [];
+        // $pData =[]; 
+        // foreach ($dataBarang as $datBarang) {
+        //     $pLabel[] = $datBarang->nama;
+        //     $pData[] = $datBarang->total_keluar;
+        // }
+
+        $brg_masuk = BarangMasuk::count();
+        $brg_keluar = BarangKeluar::count();
+       
+     
+        return view('layouts.admin.index',compact('labels','data','totalUser','admin','brg_masuk','brg_keluar'));
     }
 
     public function pagePerilaku(){
