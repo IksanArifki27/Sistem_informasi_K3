@@ -113,6 +113,7 @@
                                                         <div>
                                                             <input type = "text" name="konten" id="judul_pengumuman" class="form-control" 
                                                             placeholder= "example : Kunjungan Tim Audit" value="{{$item->konten}}"  required>
+                                                            {{-- <textarea name="konten" id="judul_pengumuman" cols="30" rows="10" value="{{$item->konten}} "></textarea> --}}
                                                         </div>
                                                         
                                                         <!-- GAMBAR TEXT BUTTON MODAL -->

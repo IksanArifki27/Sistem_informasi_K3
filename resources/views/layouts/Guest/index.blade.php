@@ -113,14 +113,9 @@
           <div class="col">
             <h2 class="border-bottom pb-2 fw-bold" data-aos="fade-right" data-aos-duration="1000" >Pengumuman K3 <br/> Hari ini</h2>
           </div>
-        </div>
+        </div> 
         <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 g-4">
-          {{-- <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-            <img src="{{asset('img/projects-5.jpg')}}" alt="unsplash.com" class="w-100 mb-3">
-            <h4 class="fw-semibold" >ISO</h4>
-            <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore architecto, veritatis accusantium in nihil eveniet alias. Odit ipsa aperiam culpa, alias reiciendis dolores eaque necessitatibus magni praesentium, nulla, iusto obcaecati.</p>
-            <a class=" text-primary" href="detail_info.html">Lihat lebih lanjut</a>
-          </div> --}}
+       
           @foreach ($datas as $data)     
           <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
             <img src="{{asset('gambarPengumuman/'.$data->foto)}}" alt="unsplash.com" class="w-100 mb-3">
@@ -130,6 +125,8 @@
           </div>
           @endforeach
         </div>
+       
+        
       </div>
     </div>
     <!-- STOP -->
@@ -143,22 +140,11 @@
           <h2 class="fw-semibold border-bottom pb-2 " data-aos="fade-right" data-aos-duration="1000" >Penghargaan <br/> Terkini</h2>
         </div>
       </div>
-      {{-- <div class="row align-items-center row-cols-lg-2 row-cols-1">
-        <div class="col d-flex d-lg-block d-none">
-          <img src="{{asset('img/projects-3.jpg')}}" class="me-2" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        </div>
-        <div class="col">
-          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> <i class="fa-regular fa-circle-check"></i> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, nobis eos ut modi fugit unde non aspernatur aperiam.
-          </h5>
-          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500"><i class="fa-regular fa-circle-check"></i> Yohana lorem dolor sit amet, consectetur adipisicing elit.</h5>
-          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700"><i class="fa-regular fa-circle-check"></i> pakde fiken</h5>
-          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800"><i class="fa-regular fa-circle-check"></i> untag sby</h5>
-        </div>
-      </div> --}}
+   
     </div>
     @foreach ($penghargaans as $item)
      <div class="row align-items-center row-cols-lg-2 row-cols-1 my-3">
-        <div class="col d-flex d-lg-block d-none">
+        <div class="col d-flex d-lg-block ">
           <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="ms-5" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
         </div>
         <div class="col">

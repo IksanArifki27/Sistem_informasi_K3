@@ -64,9 +64,7 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
    
     Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_Detail']);
 
-    // Route::get('/tambahStok',function(){
-    //     return view('layouts.BrgMasuk.tambahStok');
-    // });
+ 
 
     // tambah Stok untuk admin
     Route::get('formTambah',[BarangMasukController::class,'formTambahStok'])->name('lokasi');
