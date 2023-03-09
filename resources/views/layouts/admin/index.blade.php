@@ -188,6 +188,7 @@
                 </div>
             </div>
 
+            @include('layouts.inc.footer')
         </div>
         <!-- /.container-fluid -->
 
@@ -195,7 +196,6 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-           @include('layouts.inc.footer')
             <!-- End of Footer -->
 
         </div>

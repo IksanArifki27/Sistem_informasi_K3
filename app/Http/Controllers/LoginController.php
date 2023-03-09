@@ -48,6 +48,10 @@ class LoginController extends Controller
         return view('layouts.login.daftarUser',compact('datas'));
     }
 
+    public function resetPassword(){
+        return view('layouts.login.resetPassword');
+    }
+
     public function logout(){
         Auth::logout();
         return redirect('/login');
