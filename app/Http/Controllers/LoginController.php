@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 Use \Carbon\Carbon;
-use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -22,6 +23,9 @@ class LoginController extends Controller
         return redirect('/login')->with('error','Username/Password anda salah');
     }
     public function postRegister(Request $request){
+        $request->validate([
+            'password' => 'min:5'
+        ]);
         User::create([
             "name" => $request->name,
             "email" => $request->email,
@@ -30,7 +34,7 @@ class LoginController extends Controller
             "remember_token" => Str::random(60),
         ]);
         // dd($request->all());
-        return redirect('/dashbord');
+        return redirect('/dashbord')->with('success','Berhasil Menambah Pengguna');
        
     }
     function authenticated(Request $request, $user)
@@ -50,6 +54,27 @@ class LoginController extends Controller
 
     public function resetPassword(){
         return view('layouts.login.resetPassword');
+    }
+
+    public function prosesChange(Request $request){
+        
+       $request->validate([
+            'newPassword' => 'min:5'
+        ]);
+        // cek password lama
+        if(!Hash::check($request->oldPassword, auth()->user()->password)){
+           return back()->with('error','password saat ini Anda salah');
+        }
+        // cek konfirmasi password
+        if($request->newPassword != $request->repeatPassword){
+           return back()->with('error',' konfirmasi Password tidak sama');
+        }
+       
+        User::whereId(auth()->user()->id)->update([
+            'password' => bcrypt($request->newPassword)
+        ]);
+        return back()->with('success','Selamat Ganti Password Berhasil');
+        
     }
 
     public function logout(){

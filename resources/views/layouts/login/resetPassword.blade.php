@@ -24,32 +24,56 @@
                             <div class="col">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-2">Reset Your Password?</h1>
-                                        <p class="mb-4">Masukkan password saat ini dan baru anda</p>
+                                        <h1 class="h4 text-gray-900 mb-2">Ganti Password?</h1>
+                                        <p class="mb-4">Masukkan password saat ini dan Password baru anda</p>
                                     </div>
-                                    <form class="user">
+                                    @if (session('success'))
+                                         <div class="alert alert-success alert-block">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>	
+                                            <strong>{{ session('success') }}</strong>
+                                        </div>
+                                    
+                                    @elseif(session('error'))    
+                                         <div class="alert alert-danger alert-block">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>	
+                                            <strong>{{ session('error') }}</strong>
+                                        </div>
+                                    @endif
+                                    @error('newPassword')
+                                        <div class="alert alert-danger alert-block">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>	
+                                            <strong>{{ $message }}</strong>
+                                        </div>
+                                    @enderror
+                                    <form class="user" action="/prosesChange" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Password Saat Ini</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1">
+                                            <input type="password" class="form-control" id="exampleInputPassword1" name="oldPassword" >
                                         </div>
+                                       
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Password Baru</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1">
+                                            <input type="password" class="form-control" id="exampleInputPassword1" name="newPassword" >
                                         </div>
+                                         @error('keterangan')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Konfirmasi Password Baru</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1">
+                                            <input type="password" class="form-control" id="exampleInputPassword1" name="repeatPassword" >
                                         </div>
-                                        
-                                        
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                            Reset Password
-                                        </a>
+                                       
+                                    
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" >Ganti Password</button>
                                     </form>
                                     <hr>
                                    
                                     <div class="text-center">
-                                        <a class="small" href="login.html">Already have an account? Login!</a>
+                                        <a class="small" href="/login">Sudah punya akun ? Login!</a>
+                                        <br>
+                                        <a href="/dashbord" class="mt-5">Kembali</a>
                                     </div>
                                 </div>
                             </div>
@@ -66,5 +90,6 @@
 @include('layouts.inc.script')
 
 </body>
+
 
 </html>

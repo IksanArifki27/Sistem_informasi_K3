@@ -26,6 +26,7 @@ Route::post('/postLogin',[LoginController::class,'postLogin']);
 Route::get('/register',[LoginController::class,'register']);
 Route::post('/postRegister',[LoginController::class,'postRegister']);
 Route::get('/resetPassword',[LoginController::class,'resetPassword']);
+Route::post('/prosesChange',[LoginController::class,'prosesChange']);
 Route::get('/logout',[LoginController::class,'logout']);
 
 // halaman guest

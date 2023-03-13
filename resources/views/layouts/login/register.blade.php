@@ -24,19 +24,25 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Daftar User</h1>
                             </div>
+                            @error('password')
+                            <div class="alert alert-danger alert-block">
+                                <button type="button" class="close" data-dismiss="alert">×</button>	
+                            <strong>{{ $message }}</strong>
+                             </div>     
+                            @enderror
                             <form class="user" action="/postRegister" method="POST">
                                 @csrf
                                 <div class="form-group" >
                                     <input type="text" name="name" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="masukan Nama ">
+                                        placeholder="masukan Nama " required>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="masukan Email.. ">
+                                        placeholder="masukan Email.. " required>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="password" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="masukan password.. ">
+                                        placeholder="masukan password.. " required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlSelect1">Pilih Level </label>
