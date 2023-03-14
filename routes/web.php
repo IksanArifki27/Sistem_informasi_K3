@@ -20,13 +20,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// halaman login
+// halaman Auth
 Route::get('/login',[LoginController::class,'login'])->name('login');
 Route::post('/postLogin',[LoginController::class,'postLogin']);
 Route::get('/register',[LoginController::class,'register']);
 Route::post('/postRegister',[LoginController::class,'postRegister']);
+// untuk change passwrd
 Route::get('/resetPassword',[LoginController::class,'resetPassword']);
 Route::post('/prosesChange',[LoginController::class,'prosesChange']);
+// untuk lupa passwrd
+Route::get('/forgotPassword',[LoginController::class,'forgotPassword']);
+Route::post('/forgotPassword',[LoginController::class,'postForgotPassword']);
+Route::get('/changePassword',[LoginController::class,'changePassword']);
+Route::post('/changePassword',[LoginController::class,'postChangePassword']);
+// untuk logout program
 Route::get('/logout',[LoginController::class,'logout']);
 
 // halaman guest
@@ -89,10 +96,15 @@ Route::group(['middleware' => ['auth','CekLevel:admin,user']],function(){
     Route::get('/isip3k',[AdminController::class,'isiP3K']);
     Route::get('/diagram',[AdminController::class,'diagram']);
     Route::get('/isip3k_dept',[AdminController::class,'isip3k_dept']);
-    Route::get('/inputPemakaian',[BarangKeluarController::class,'index']);
+   
     Route::get('/PeringatanClose',[AdminController::class,'tabelPeringatanClosed']);
     Route::get('/Peringatan',[AdminController::class,'tabelPeringatan']);
+    
     Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_Detail']);
+// untuk obat keluar User
+    Route::get('inputPemakaian',[BarangKeluarController::class,'index']);
+    Route::get('inputPemakaian/{id}',[BarangKeluarController::class,'LokasiBarangKeluarId']);
+    Route::post('/postKeluarStok',[BarangKeluarController::class,'postKeluarStok']);
 
 });
 

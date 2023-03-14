@@ -77,6 +77,10 @@ class LoginController extends Controller
         
     }
 
+    public function forgotPassword(){
+        return view('layouts.login.forgotPassword');
+    }
+
     public function logout(){
         Auth::logout();
         return redirect('/login');
