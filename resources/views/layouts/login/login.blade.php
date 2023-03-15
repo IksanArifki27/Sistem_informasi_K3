@@ -66,7 +66,9 @@
                                     
                                    
                                     <div class="text-center">
-                                        <a class="small" href="/" >home</a>
+                                        <a  href="/" >Home</a>
+                                        <br>
+                                        <a href="/forgotPassword">lupa password?</a>
                                     </div>
                                    
                                 </div>

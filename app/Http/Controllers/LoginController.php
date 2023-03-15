@@ -8,7 +8,9 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
@@ -52,7 +54,7 @@ class LoginController extends Controller
         return view('layouts.login.daftarUser',compact('datas'));
     }
 
-    public function resetPassword(){
+      public function resetPassword(){
         return view('layouts.login.resetPassword');
     }
 
@@ -80,6 +82,61 @@ class LoginController extends Controller
     public function forgotPassword(){
         return view('layouts.login.forgotPassword');
     }
+
+    public function changePassword($token){
+        return view('layouts.login.ChangePassword',['token' => $token]);
+    }
+
+    public function postForgotPassword(Request $request){
+        // $request->validate([
+        //     'email' => 'required|email|exist:users'
+        // ]);
+        $token = Str::random(64);
+
+        DB::table('password_resets')->insert([
+            'email' => $request->input('email'),
+            'token' => $token,
+            'created_at' => Carbon::now(),
+        ]);
+
+        Mail::send('layouts.login.MailViews',['token' => $token],function($message) use($request) {
+            $message->to($request->input('email'));
+            $message->subject('Reset Password');
+        });
+
+        return back()->with('success','Berhasil Mengirim email link reset password cek Email anda ');
+    }
+
+ 
+
+    public function postChangePassword(Request $request){
+        $request->validate([
+            'newPassword' => 'required|min:5',
+            'confirmPassword' => 'required',
+        ]);
+
+        $reset_password = DB::table('password_resets')
+        ->where('email', $request->input('email'))
+        ->where('token', $request->token)
+        ->first();
+
+        if (!$reset_password) {
+           back()->with('error','Invalid Token!');
+        }
+        User::where('email', $request->input('email'))
+        ->update(['password' => bcrypt($request->input('newPassword'))]);
+        //  User::whereId(auth()->user()->id)->update([
+        //     'password' => bcrypt($request->newPassword)
+        // ]);
+
+        DB::table('password_resets')
+        ->where('email', $request->input('email'))
+        ->delete();
+
+        return redirect('/login')->with('success','Password anda berhasil diganti!');
+    }
+    
+ 
 
     public function logout(){
         Auth::logout();

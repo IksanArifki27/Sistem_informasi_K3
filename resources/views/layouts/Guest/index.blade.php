@@ -190,7 +190,7 @@
                     <figure>
                       <video src="/vidio/body_harnes.mp4" width="400" controls></video>
                       <figcaption>
-                        <p class="card-text">Pastikan kamu menggunakan full body harness yang digunakan sesuai dengan standar lalu selalu cek webbing/tali pada full body harness tidak ada yang terpelintir dan ketahui batas maksimum untuk menahan beban.<br></p>
+                        <p class="card-text justify">Pastikan kamu menggunakan full body harness yang digunakan sesuai dengan standar lalu selalu cek webbing/tali pada full body harness tidak ada yang terpelintir dan ketahui batas maksimum untuk menahan beban.<br></p>
                         anda bisa lihat video lainnya  
                         <a target="_blank" rel="noopener"  href="https://www.youtube.com/watch?v=NKPYtq1LOrE">klik</a>
                       </figcaption>
@@ -209,8 +209,8 @@
             <img src="{{asset('img/bahaya_listrik.jpg')}}" class="card-img-top" alt="obat">
             <div class="card-body">
               <h6><b>Bahaya Tegangan Tinggi</b></h6>
-              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, asperiores.</p>
-              <a class=" text-primary" href="" data-bs-toggle="modal" data-bs-target="#exampleModal1">simak tipsnya</a>
+              <p class="card-text">Bekerja di area listrik bertegangan tinggi bisa sangat berbahaya. jika tersengat dapat mengakibatkan luka bakar, hingga kematian .</p>
+              <a class=" text-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal1">simak tipsnya</a>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -245,7 +245,7 @@
             <img src="{{asset('img/angkatBarang.png')}}" class="card-img-top" alt="obat">
             <div class="card-body">
               <h6><b>Mengangkat Benda Berat</b></h6>
-              <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, asperiores.</p>
+              <p class="card-text">Risiko pertama yang dialami saat mengangkat beban terlalu berat adalah patah tulang. Terjadi karena beban yang diangkat melebihi kemampuan otot</p>
               <a class=" text-primary" href="" data-bs-toggle="modal" data-bs-target="#exampleModal2">simak tipsnya</a>
             </div>
             <!-- Modal -->

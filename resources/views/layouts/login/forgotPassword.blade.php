@@ -25,26 +25,33 @@
                             <div class="col-lg-10 mx-auto">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
-                                        <p class="mb-4">We get it, stuff happens. Just enter your email address below
-                                            and we'll send you a link to reset your password!</p>
+                                        <h1 class="h4 text-gray-900 mb-2">Apa Anda lupa Password?</h1>
+                                        <p class="mb-4">Cukup masukkan alamat email Anda di bawah ini
+                                            dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda!</p>
                                     </div>
-                                    <form class="user">
+                                    @if ($message = Session::get('success'))
+                                        <div class="alert alert-success alert-block">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>	
+                                            <strong>{{ $message }}</strong>
+                                        </div> 
+                                        
+                                    @endif
+                                    <form class="user" method="POST" action="/forgotPassword">
+                                       @csrf
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Masukan Email anda" name="email">
                                         </div>
-                                        <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                            Reset Password
-                                        </a>
+                                       
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">reset password</button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a class="small" href="/register">Buat akun baru?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="login.html">Already have an account? Login!</a>
+                                        <a class="small" href="/login">Sudah punya akunt? Login!</a>
                                     </div>
                                 </div>
                             </div>

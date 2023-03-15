@@ -31,7 +31,7 @@ Route::post('/prosesChange',[LoginController::class,'prosesChange']);
 // untuk lupa passwrd
 Route::get('/forgotPassword',[LoginController::class,'forgotPassword']);
 Route::post('/forgotPassword',[LoginController::class,'postForgotPassword']);
-Route::get('/changePassword',[LoginController::class,'changePassword']);
+Route::get('/changePassword/{token}',[LoginController::class,'changePassword'])->name('resetPassword');
 Route::post('/changePassword',[LoginController::class,'postChangePassword']);
 // untuk logout program
 Route::get('/logout',[LoginController::class,'logout']);
