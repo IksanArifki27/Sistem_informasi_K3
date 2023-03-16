@@ -36,8 +36,39 @@ class AdminController extends Controller
         $brg_masuk = BarangMasuk::count();
         $brg_keluar = BarangKeluar::count();
        
-     
-        return view('layouts.admin.index',compact('labels','data','totalUser','admin','brg_masuk','brg_keluar'));
+        // barang masuk perbulan
+        $masuk_jan = BarangMasuk::whereMonth('created_at','01')->count();
+        $masuk_feb = BarangMasuk::whereMonth('created_at','02')->count();
+        $masuk_maret = BarangMasuk::whereMonth('created_at','03')->count();
+        $masuk_april = BarangMasuk::whereMonth('created_at','04')->count();
+        $masuk_mei = BarangMasuk::whereMonth('created_at','05')->count();
+        $masuk_juni = BarangMasuk::whereMonth('created_at','06')->count();
+        $masuk_juli = BarangMasuk::whereMonth('created_at','07')->count();
+        $masuk_agustus = BarangMasuk::whereMonth('created_at','08')->count();
+        $masuk_september = BarangMasuk::whereMonth('created_at','09')->count();
+        $masuk_oktober = BarangMasuk::whereMonth('created_at','10')->count();
+        $masuk_november = BarangMasuk::whereMonth('created_at','11')->count();
+        $masuk_desember = BarangMasuk::whereMonth('created_at','12')->count();
+
+        // barang keluar perbulan
+        $keluar_jan = BarangKeluar::whereMonth('created_at','01')->count();
+        $keluar_feb = BarangKeluar::whereMonth('created_at','02')->count();
+        $keluar_maret = BarangKeluar::whereMonth('created_at','03')->count();
+        $keluar_april = BarangKeluar::whereMonth('created_at','04')->count();
+        $keluar_mei = BarangKeluar::whereMonth('created_at','05')->count();
+        $keluar_juni = BarangKeluar::whereMonth('created_at','06')->count();
+        $keluar_juli = BarangKeluar::whereMonth('created_at','07')->count();
+        $keluar_agustus = BarangKeluar::whereMonth('created_at','08')->count();
+        $keluar_september = BarangKeluar::whereMonth('created_at','09')->count();
+        $keluar_oktober = BarangKeluar::whereMonth('created_at','10')->count();
+        $keluar_november = BarangKeluar::whereMonth('created_at','11')->count();
+        $keluar_desember = BarangKeluar::whereMonth('created_at','12')->count();
+
+        return view('layouts.admin.index',compact('labels','data','totalUser','admin','brg_masuk','brg_keluar',
+        
+        'masuk_jan','masuk_feb','masuk_maret','masuk_april','masuk_mei','masuk_juni','masuk_juli','masuk_agustus','masuk_september','masuk_oktober','masuk_november','masuk_desember',
+        
+        'keluar_jan','keluar_feb','keluar_maret','keluar_april','keluar_mei','keluar_juni','keluar_juli','keluar_agustus','keluar_september','keluar_oktober','keluar_november','keluar_desember'));
     }
 
     public function pagePerilaku(){

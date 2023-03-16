@@ -46,7 +46,7 @@
                         <h6 class="collapse-header">Tentang Kotak P3K:</h6>
                         <a class="collapse-item" href="/isip3k">Isi Kotak P3K & Lokasinya</a>
                         <a class="collapse-item" href="/inputPemakaian">Input Pemakaian <br>Kotak P3K</a>
-                        <a class="collapse-item" href="/diagram">Diagram Penggunaan <br>P3K</a>
+                       
                     </div>
                 </div>
             </li>
@@ -123,13 +123,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePenghargaan"
                     aria-expanded="true" aria-controls="collapseP3k">
                     <i class="fas fa-money fa-trophy"></i>
-                    <span> Tabel Penghargaan</span>
+                    <span> Penghargaan</span>
                 </a>
                 <div id="collapsePenghargaan" class="collapse" aria-labelledby="headingP3k"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/inputPenghargaan">Tambah Penghargaan</a>
-                        <a class="collapse-item" href="/editPenghargaan">Tabel Penghargaan</a>
+                        <a class="collapse-item" href="/editPenghargaan">Data Penghargaan</a>
                     </div>
                 </div>
             </li>

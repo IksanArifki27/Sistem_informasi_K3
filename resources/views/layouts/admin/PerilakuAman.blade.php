@@ -52,7 +52,37 @@
                                 </div>
                             </div>
                         </div>
+                         <div class="col-xl-6 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Apa itu K3 ??</h6>
 
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" width="400"
+                                            src="{{asset('img/k3.png')}}" 
+                                        alt="logok3">
+                                    </div>
+                                    <div style="text-align: justify;">
+                                        Menurut Peraturan Pemerintah Nomor 50 Tahun 2012, <b>Pengertian Keselamatan Dan Kesehatan Kerja Atau K3</b> Adalah Segala Kegiatan Untuk Menjamin Dan  Melindungi  Keselamatan  Dan  Kesehatan  Tenaga Kerja Melalui Upaya Pencegahan Kecelakaan Kerja Dan Penyakit Akibat Kerja.
+                                        <br><br>
+                                        <b>Tujuan K3 secara umum</b>, <br>
+                                        1. Melindungi dan memelihara kesehatan dan keselamatan tenaga kerja sehingga kinerjanya dapat meningkat.<br>
+                                        2. Menjaga dan memastikan keselamatan dan kesehatan semua orang yang berada di lingkungan kerja.<br>
+                                        3. Memastikan sumber produksi terpelihara dengan baik dan dapat digunakan secara aman dan efisien.
+
+
+
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
                             
 
                     </div>

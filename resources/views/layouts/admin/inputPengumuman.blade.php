@@ -52,7 +52,7 @@
                                     <label for="customFile">Masukkan Foto</label>
                                     <input type="file" accept="image/*" class="form-control-file"  name="foto">
                                 </div>
-                                <button class="btn btn-primary" type="submit">Sumbit</button>
+                                <button class="btn btn-success" type="submit">Simpan</button>
                             </form>
                         </div>
                     </div>

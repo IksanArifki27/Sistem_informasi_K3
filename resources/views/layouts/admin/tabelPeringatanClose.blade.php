@@ -57,32 +57,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- DATA 1 -->
-                                    <tr>
-                                        <td>1.</td>
-                                        <td>21-03-2023</td>
-                                        <td>
-                                            <img class="img-fluid px-3 px-sm-4 " style="width: 90rem;"
-                                            src="{{asset('img/bahayajatuh.jpg')}}" alt="...">
-                                        </td>
-                                        <td><b> Departemen IT </b></td>
-                                        <td>PC server</td>
-                                        <td>Ditemukan Kabel berserakan</td>
-                                        <td>Ditemukan Kabel berserakan</td>
-                                        <td>Teledor</td>
-                                        <td>Bpk Messi</td>
-                                        <td>22-03-2023</td>
-                                        <td>22-03-2023</td>
-                                        <td>Closed</td>
-                                        <td>
-                                            <img class="img-fluid px-3 px-sm-4 " style="width: 90rem;"
-                                            src="{{asset('img/bahayajatuh.jpg')}}" alt="...">
-                                        </td>
-                                            {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                                Klik Gambar
-                                            </button>  --}}
-                                        
-                                    </tr>
+                                 
                                     
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -125,7 +100,7 @@
                                         <td>{{$data->sioktag->PIC}}</td>
                                         <td>{{$data->sioktag->DL}}</td>
                                         <td>{{$data->created_at->format('d-m-Y')}}</td>
-                                        <td>{{$data->status}}</td>
+                                        <td style="background-color: rgb(183, 255, 183)"> {{$data->status}}</td>
                                         <td>
                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
                                             src="{{asset('fotoKeterangan/'.$data->keterangan)}}" alt="..." data-toggle="modal" data-target="#ModalDetailClosed{{$data->id}}">

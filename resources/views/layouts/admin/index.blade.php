@@ -105,7 +105,7 @@
                     <!-- Content Row -->
 
                     <div class="row">
-                               <div class="col-xl-8 col-lg-7">
+                        <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -130,9 +130,10 @@
                                    
                                 </div>
                                 <!-- Card Body -->
+                                <div class="col-xl-8 col-lg-7">
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
+                                    <div class="chart-pie pt-4 pb-2 ">
+                                        <canvas id="myPieChart" ></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
                                        
@@ -142,45 +143,31 @@
                                         </span>
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-success "></i> Obat Keluar
-                                        </span>
-                                       
-                                        
+                                        </span>     
                                     </div>
                                 </div>
+                                  </div>
                             </div>
                         </div>
-                        <!-- Area Chart -->
+
+                        {{-- chart pengeluaran masuk barang perbulan --}}
                         <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Apa itu K3 ??</h6>
-
+                           <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Barang Masuk & Keluar Perbulan</h6>
                                 </div>
-                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" width="400"
-                                            src="{{asset('img/k3.png')}}" 
-                                        alt="logok3">
+                                    <div class="chart-bar">
+                                        <canvas id="myBarChart"></canvas>
                                     </div>
-                                    <div style="text-align: justify;">
-                                        Menurut Peraturan Pemerintah Nomor 50 Tahun 2012, <b>Pengertian Keselamatan Dan Kesehatan Kerja Atau K3</b> Adalah Segala Kegiatan Untuk Menjamin Dan  Melindungi  Keselamatan  Dan  Kesehatan  Tenaga Kerja Melalui Upaya Pencegahan Kecelakaan Kerja Dan Penyakit Akibat Kerja.
-                                        <br><br>
-                                        <b>Tujuan K3 secara umum</b>, <br>
-                                        1. Melindungi dan memelihara kesehatan dan keselamatan tenaga kerja sehingga kinerjanya dapat meningkat.<br>
-                                        2. Menjaga dan memastikan keselamatan dan kesehatan semua orang yang berada di lingkungan kerja.<br>
-                                        3. Memastikan sumber produksi terpelihara dengan baik dan dapat digunakan secara aman dan efisien.
-
-
-
-
-                                    </div>
+                                    <hr>
                                     
                                 </div>
                             </div>
                         </div>
+                      
+                        <!-- Area Chart -->
+                       
 
                         <!-- Pie Chart -->
                       
@@ -350,9 +337,6 @@ var myLineChart = new Chart(ctx, {
 });
 // end total user
 
-// pie chart
-
-
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
@@ -384,6 +368,118 @@ var myPieChart = new Chart(ctx, {
     cutoutPercentage: 80,
   },
 });
+
+// chart barang keluar masuk perbulan
+
+
+// function number_format(number, decimals, dec_point, thousands_sep) {
+//   // *     example: number_format(1234.56, 2, ',', ' ');
+//   // *     return: '1 234,56'
+//   number = (number + '').replace(',', '').replace(' ', '');
+//   var n = !isFinite(+number) ? 0 : +number,
+//     prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+//     sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+//     dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+//     s = '',
+//     toFixedFix = function(n, prec) {
+//       var k = Math.pow(10, prec);
+//       return '' + Math.round(n * k) / k;
+//     };
+//   // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+//   s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+//   if (s[0].length > 3) {
+//     s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+//   }
+//   if ((s[1] || '').length < prec) {
+//     s[1] = s[1] || '';
+//     s[1] += new Array(prec - s[1].length + 1).join('0');
+//   }
+//   return s.join(dec);
+// }
+
+// Bar Chart Example
+var ctx = document.getElementById("myBarChart");
+var myBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni","Juli",'Agustus','September','Oktober','November','Desember'],
+    datasets: [{
+      label: "Barang masuk",
+      backgroundColor: "#4e73df",
+      hoverBackgroundColor: "#2e59d9",
+      borderColor: "#4e73df",
+      data: [
+        {{$masuk_jan}},
+        {{$masuk_feb}},
+        {{$masuk_maret}},
+        {{$masuk_april}},
+        {{$masuk_mei}},
+        {{$masuk_juni}},
+        {{$masuk_juli}},
+        {{$masuk_agustus}},
+        {{$masuk_september}},
+        {{$masuk_oktober}},
+        {{$masuk_november}},
+        {{$masuk_desember}}
+    ],
+    },
+    {
+      label: "Barang Keluar",
+      backgroundColor: "#1cc88a",
+      hoverBackgroundColor: "#1cc88b",
+      borderColor: "#1cc88a",
+      data: [{{$masuk_jan}},
+        {{$keluar_feb}},
+        {{$keluar_maret}},
+        {{$keluar_april}},
+        {{$keluar_mei}},
+        {{$keluar_juni}},
+        {{$keluar_juli}},
+        {{$keluar_agustus}},
+        {{$keluar_september}},
+        {{$keluar_oktober}},
+        {{$keluar_november}},
+        {{$keluar_desember}}],
+    }],
+  },
+  options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        left: 10,
+        right: 25,
+        top: 25,
+        bottom: 0
+      }
+    },
+
+    // legend: {
+    //   display: false
+    // },
+    tooltips: {
+      titleMarginBottom: 10,
+      titleFontColor: '#6e707e',
+      titleFontSize: 14,
+      backgroundColor: "rgb(255,255,255)",
+      bodyFontColor: "#858796",
+      borderColor: '#dddfeb',
+      borderWidth: 1,
+      xPadding: 15,
+      yPadding: 15,
+      displayColors: false,
+      caretPadding: 10,
+      callbacks: {
+        label: function(tooltipItem, chart) {
+          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
+          return datasetLabel + ': +' + number_format(tooltipItem.yLabel);
+        }
+      }
+    },
+  }
+});
+
+
+
    </script>
     
 </body>

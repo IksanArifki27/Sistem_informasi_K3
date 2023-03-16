@@ -47,9 +47,7 @@
                                         <button type="submit" class="btn btn-primary btn-user btn-block">reset password</button>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="/register">Buat akun baru?</a>
-                                    </div>
+                                    
                                     <div class="text-center">
                                         <a class="small" href="/login">Sudah punya akunt? Login!</a>
                                     </div>

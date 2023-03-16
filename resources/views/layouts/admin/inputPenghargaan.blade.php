@@ -69,7 +69,7 @@
 
                                 <!-- BUTTON SIMPAN -->
                                 <div class="d-grid ">
-                                    <button class="btn btn-primary" type="submit">Simpan</button>
+                                    <button class="btn btn-success" type="submit">Simpan</button>
                                     
                                 </div>
                             </form>

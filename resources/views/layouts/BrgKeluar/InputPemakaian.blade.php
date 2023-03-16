@@ -95,7 +95,7 @@
 
                                 <!-- BUTTON SIMPAN -->
                                 <div class="d-grid ">
-                                   <button type="submit" class="btn btn-primary"> <i class="fa fa-save"></i> Ambil</button>
+                                   <button type="submit" class="btn btn-success"> <i class="fa fa-save"></i> Simpan</button>
                                 </div>
                                 
                             </form>
