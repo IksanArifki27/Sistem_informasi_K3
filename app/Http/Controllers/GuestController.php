@@ -9,8 +9,8 @@ use Illuminate\Http\Request;
 class GuestController extends Controller
 {
     public function index (Request $request){
-    $penghargaans = Penghargaan::all();
-    $datas = announcement::all();
+    $penghargaans = Penghargaan::latest()->get();
+    $datas = announcement::latest()->get();
     return view('layouts.Guest.index',compact('datas','penghargaans'));
     }
 

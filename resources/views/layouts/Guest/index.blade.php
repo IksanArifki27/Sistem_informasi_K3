@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Sistem K3</title>
+    <title>Sistem informasi K3</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 
     <!-- Font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="stylesheet" href="{{asset('css/glider.min.css')}}">
     <!-- My css -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}"/>
 
@@ -36,7 +36,7 @@
     <!-- NAV BAR START -->
     <nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
         <div class="container">
-          <a class="navbar-brand fw-bold fs-4 text-white" href="/">Sioktag</a>
+          <a class="navbar-brand fw-bold fs-4 text-white" href="/">Sioktig</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -106,15 +106,58 @@
     </div>
     <!-- STOP -->
 
-    <!-- PENGHARGAAN -->
-    <div class="projects" id="pengumuman">
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col">
-            <h2 class="border-bottom pb-2 fw-bold" data-aos="fade-right" data-aos-duration="1000" >Pengumuman K3 <br/> Hari ini</h2>
+    <!-- Pengumuman -->
+     <div class="projects" id="pengumuman">
+       <div class="container">
+         <div class="row ">
+           <div class="col">
+             <h2 class="border-bottom pb-2 fw-bold " data-aos="fade-right" data-aos-duration="1000" >Pengumuman K3 <br/> Hari ini</h2>
+           </div>
+         </div>
+    <section class="p-slider" >
+      <div class="slider-btns " >
+        <button aria-label="Previous" class="glider-prev ">
+          <span></span>
+        </button>
+        <button aria-label="Next" class="glider-next">
+          <span></span>
+        </button>
+      </div>
+        <div class="glider-contain">
+        <div class="glider">
+          @foreach ($datas as $data)
+            <div class="product-box" data-aos="fade-up-right">
+            <!-- gambar -->
+            <div class="p-img-container">
+              <div class="p-img">
+                <a href="#">
+                  <img src="{{asset('gambarPengumuman/'. $data->foto )}}" class="p-img-front" alt="wleke">
+                  <img src="{{asset('gambarPengumuman/'. $data->foto )}}" class="p-img-back" alt="wleke">
+                </a>
+              </div>
+            </div>
+    
+            <!-- Text -->
+            <div class="p-box-text">
+    
+              <!-- judul berita -->
+              <a href="/detail/{{$data->id}}" class="news-title">
+                {{$data->judul}}
+              </a>
+              {{-- <h3 class="fw-bold text-dark"><a href="/detail/{{$data->id}}">
+                {{$data->judul}} 
+              </a></h3> --}}
+             <p style="text-align: justify;">{{Str::limit($data->konten,100)}}.</p>
+              <!-- Lebih lanjut -->
+              <div class="more">
+               <a class=" text-primary" href="/detail/{{$data->id}}">Lihat lebih lanjut</a>
+              </div>
+            </div>
           </div>
-        </div> 
-        <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 g-4">
+           @endforeach
+        </div>
+      </div>
+        {{-- <div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 g-4">
        
           @foreach ($datas as $data)     
           <div class="col" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
@@ -124,11 +167,12 @@
             <a class=" text-primary" href="/detail/{{$data->id}}">Lihat lebih lanjut</a>
           </div>
           @endforeach
-        </div>
+        </div> --}}
        
         
       </div>
     </div>
+     </section>
     <!-- STOP -->
 
     
@@ -141,8 +185,45 @@
         </div>
       </div>
    
-    </div>
-    @foreach ($penghargaans as $item)
+   
+    {{-- glider 2 --}}
+     <section class="p-slider">
+    <div class="slider-btns ">
+        <button aria-label="Previous" class="glider-prev2 ">
+          {{-- <span></span> --}}
+         <i class="fa fa-arrow-left" ></i>
+        </button>
+        <button aria-label="Next" class="glider-next2">
+          <i class="fa fa-arrow-right" ></i>
+        </button>
+      </div>
+      <div class="glider-contain">
+        <div class="glider2">
+           @foreach ($penghargaans as $item)
+            <div class="product-box"  data-aos="fade-up-left">
+            <!-- gambar -->
+            <div class="p-img-container">
+              <div class="p-img">
+                <a href="#">
+                  <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="p-img-front" alt="wleke">
+                  <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="p-img-back" alt="wleke">
+                </a>
+              </div>
+            </div>
+    
+            <!-- Text -->
+            <div class="p-box-text">
+    
+              <!-- judul berita -->
+              <h3 class="text-center">
+                {{$item->judul}}
+              </h3>
+             
+             
+            </div>
+          </div>
+           @endforeach
+      {{-- @foreach ($penghargaans as $item)
      <div class="row align-items-center row-cols-lg-2 row-cols-1 my-3">
         <div class="col d-flex d-lg-block ">
           <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="ms-5" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
@@ -155,8 +236,13 @@
           
         </div>
       </div>
-    @endforeach
+      @endforeach --}}
+        </div>
+        </div>
+
+         </div>
   </div>
+</section>
   <!-- STOP -->
 
   <!-- START TIPS -->
@@ -328,6 +414,141 @@
 
     <!-- Script AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Glider JS -->
+    <script src="{{asset('js/glider.min.js')}}"></script>
+
+    <!-- Script Glider -->
+    <script>
+      new Glider(document.querySelector('.glider'), {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+          prev: '.glider-prev',
+          next: '.glider-next'
+        },
+        responsive: [
+          {
+            // screens greater than >= 1200px
+            breakpoint: 1200,
+            settings: {
+              // Set to `auto` and provide item width to adjust to viewport
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 900,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 304,
+            settings: {
+              slidesToShow: 1.5,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 0,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          }
+        ]
+      });
+    </script>
+    <script>
+      new Glider(document.querySelector('.glider2'), {
+        slidesToScroll: 1,
+        slidesToShow: 3,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+          prev: '.glider-prev2',
+          next: '.glider-next2'
+        },
+        responsive: [
+          {
+            // screens greater than >= 1200px
+            breakpoint: 1200,
+            settings: {
+              // Set to `auto` and provide item width to adjust to viewport
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 900,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 304,
+            settings: {
+              slidesToShow: 1.5,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          },
+          {
+            // screens greater than >= 900px
+            breakpoint: 0,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              // itemWidth: 150,
+              // duration: 0.25
+            }
+          }
+        ]
+      });
+    </script>
+    <!-- STOP SCRIPT -->
     <script>
       AOS.init();
     </script>
