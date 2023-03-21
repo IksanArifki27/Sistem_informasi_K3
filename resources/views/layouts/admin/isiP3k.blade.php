@@ -55,8 +55,8 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="text-center">
-                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="{{asset('template/img/undraw_posting_photo.svg')}}" alt="...">
+                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 18rem;"
+                                            src="{{asset('img/obat1.jpg')}}" alt="...">
                                         </div>
                                         <a  rel="nofollow" href="/isip3k_dept/{{$data->id}}">Klik Untuk Melihat Isi Kotak P3K &rarr;</a>
                                     </div>

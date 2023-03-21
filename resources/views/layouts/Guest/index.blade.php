@@ -200,7 +200,7 @@
       <div class="glider-contain">
         <div class="glider2">
            @foreach ($penghargaans as $item)
-            <div class="product-box"  data-aos="fade-up-left">
+            <div class="product-box2"  data-aos="fade-up-left">
             <!-- gambar -->
             <div class="p-img-container">
               <div class="p-img">
@@ -218,25 +218,13 @@
               <h3 class="text-center">
                 {{$item->judul}}
               </h3>
+              <p>{{$item->keterangan}} </p>
              
              
             </div>
           </div>
            @endforeach
-      {{-- @foreach ($penghargaans as $item)
-     <div class="row align-items-center row-cols-lg-2 row-cols-1 my-3">
-        <div class="col d-flex d-lg-block ">
-          <img src="{{asset('gambarPenghargaan/'.$item->foto)}}" class="ms-5" alt="" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        </div>
-        <div class="col">
-          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> <i class="fa-regular fa-circle-check"></i> {{$item->judul}}
-          </h5>
-          <h5 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400"> <i class="fa-regular fa-circle-check"></i> {{$item->keterangan}}
-          </h5>
-          
-        </div>
-      </div>
-      @endforeach --}}
+
         </div>
         </div>
 

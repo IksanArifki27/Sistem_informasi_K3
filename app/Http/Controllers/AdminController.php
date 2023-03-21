@@ -35,6 +35,8 @@ class AdminController extends Controller
         $admin = User::where('level','admin')->count();
         $brg_masuk = BarangMasuk::count();
         $brg_keluar = BarangKeluar::count();
+
+        $hasaplash = BarangKeluar::where('barang_id','1')->count();
        
         // barang masuk perbulan
         $masuk_jan = BarangMasuk::whereMonth('created_at','01')->count();
