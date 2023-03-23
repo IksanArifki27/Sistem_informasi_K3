@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Mail\SendMail;
 use App\Models\Sioktag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
 
 class SioktagController extends Controller
@@ -28,6 +31,14 @@ class SioktagController extends Controller
         $request->file('foto')->move('imgMobileSioktag/',  $request->file('foto')->getClientOriginalName());
         $data->foto = $request->file('foto')->getClientOriginalName();
         $data->save();
+
+        $all_tujuan = User::select('email')->get();
+        $isi_email = [
+            'title' => "Sefty Patrol Interbat News",
+            'body' => "Harap Menyelesaikan Tugas yang sudah Di upoad"
+        ];
+
+        Mail::to($all_tujuan)->send(new SendMail);
 
         return response()->json([
             "msg" => "Data berhasil ditambah",

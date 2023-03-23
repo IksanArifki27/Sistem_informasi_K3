@@ -74,6 +74,8 @@ class AdminController extends Controller
     }
 
     public function pagePerilaku(){
+      
+       
         return view('layouts.admin.PerilakuAman');
     }
 

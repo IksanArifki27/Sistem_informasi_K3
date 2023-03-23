@@ -36,7 +36,7 @@
     <!-- NAV BAR START -->
     <nav class="navbar navbar-expand-lg fixed-top animate__animated animate__fadeInDown">
         <div class="container">
-          <a class="navbar-brand fw-bold fs-4 text-white" href="/">Sioktag</a>
+          <a class="navbar-brand fw-bold fs-4 text-white" href="/">Sioktig</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
