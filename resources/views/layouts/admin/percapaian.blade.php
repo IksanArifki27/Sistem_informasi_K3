@@ -57,9 +57,10 @@
                     <hr style="height:2px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(38, 44, 156)" >
                     <div class="row">
                         <!-- Penghargaan 1-->
-                        <div class="col-xl-4 col-lg-5">
-                            @foreach ($data as $item) 
-                            <div class="card shadow mb-4">
+                        
+                        @foreach ($data as $item) 
+                        <div class="col-xl-4 col-lg-5 ">
+                            <div class="card shadow mb-3">
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 border-bottom-success">
                                     <h6 class="m-0 font-weight-bold text-primary">{{$item->judul}}</h6>
@@ -74,9 +75,9 @@
                                     </div>
                                 </div>
                             </div>
-                             @endforeach
                         </div>
-
+                             @endforeach
+                       
                         <!-- Penghargaan 1-->
                        
 

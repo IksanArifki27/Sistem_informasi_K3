@@ -24,6 +24,7 @@ class LoginController extends Controller
         }
         return redirect('/login')->with('error','Username/Password anda salah');
     }
+
     public function postRegister(Request $request){
         $request->validate([
             'password' => 'min:5'
@@ -39,12 +40,12 @@ class LoginController extends Controller
         return redirect('/dashbord')->with('success','Berhasil Menambah Pengguna');
        
     }
-    function authenticated(Request $request, $user)
-{
-    $user->update([
-        'last_login' => Carbon::now()->toDateTimeString(),
-    ]);
-}
+//     function authenticated(Request $request, $user)
+// {
+//     $user->update([
+//         'last_login' => Carbon::now()->toDateTimeString(),
+//     ]);
+// }
 
     public function register(){
         return view('layouts.login.register');

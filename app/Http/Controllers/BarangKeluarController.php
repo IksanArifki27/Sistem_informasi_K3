@@ -11,11 +11,13 @@ class BarangKeluarController extends Controller
 {
     
     public function index(){
+        // menampilkan semua lokasi
          $lokasi = Lokasi::all();
         return view('layouts.BrgKeluar.inputPemakaian',compact('lokasi'));
     }
 
     public function recordKeluar(){
+        // menampilkan 
         $brg_klr = BarangKeluar::latest()->with('barang','lokasi')->paginate(10);
         return view('layouts.BrgKeluar.TabelObatKeluar',compact('brg_klr'));
     }

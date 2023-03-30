@@ -73,8 +73,6 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
    
     Route::get('/isip3k_dept/{id}',[AdminController::class,'isip3k_Detail']);
 
- 
-
     // tambah Stok untuk admin
     Route::get('formTambah',[BarangMasukController::class,'formTambahStok'])->name('lokasi');
     Route::get('formTambah/{id}',[BarangMasukController::class,'LokasiBarangId']);
@@ -110,7 +108,3 @@ Route::group(['middleware' => ['auth','CekLevel:admin,user']],function(){
 
 
 
-
-Route::get('/car',function(){
-    return view('layouts.carosel');
-});

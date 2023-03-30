@@ -11,7 +11,7 @@ class BarangMasukController extends Controller
 {
     //
 
-
+    
     public function index(){
         $brg_msk = BarangMasuk::latest()->with('barang','lokasi')->paginate(10);
         return view('layouts.BrgMasuk.TabelObatMasuk',compact('brg_msk'));
@@ -24,6 +24,7 @@ class BarangMasukController extends Controller
         
        
     }
+    
     public function LokasiBarangId($id){
         $data = Barang::where('lokasi_id',$id)->get();
         return response()->json($data);

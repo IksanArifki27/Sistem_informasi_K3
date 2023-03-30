@@ -52,9 +52,9 @@
                                     @php
                                         $no = 1;
                                     @endphp
-                                    @foreach ($brg_klr as $item)     
+                                    @foreach ($brg_klr as $index =>  $item)     
                                     <tr>
-                                        <td>{{$no++}} </td>
+                                        <td>{{$no++  }} </td>
                                         <td>{{$item->nama}} </td>
                                         <td>{{$item->barang->nama}} </td>
                                         <td>{{$item->lokasi->nama}} </td>
@@ -67,6 +67,7 @@
                                                        
                                 </tbody> 
                             </table>  
+                             {{$brg_klr->links()}} 
                         </div>     
                     </div>
 

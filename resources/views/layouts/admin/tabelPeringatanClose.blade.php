@@ -72,7 +72,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('img/bahayajatuh.jpg')}}" alt="foto">
+                                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width:34rem;" src="{{asset('img/bahayajatuh.jpg')}}" alt="foto">
                                                 </div>
                                             </div>
                                         </div>
@@ -86,7 +86,7 @@
                                         <td>{{$no++}} </td>
                                         <td>{{$data->sioktag->created_at->format('d-m-Y')}} </td>
                                         <td>
-                                            <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                            <img class="img-fluid  mt-3 mb-4" style="width: 100%;"
                                             src="{{asset('imgMobileSioktag/'.$data->sioktag->foto)}}" alt="..." data-toggle="modal" data-target="#ModalDetail{{$data->sioktag->id}}">
                                             {{-- <button type="button" class="btn btn-primary btn-sm ms-4" data-toggle="modal" data-target="#ModalDetail{{$data->id}}">
                                                 view
@@ -102,7 +102,7 @@
                                         <td>{{$data->created_at->format('d-m-Y')}}</td>
                                         <td style="background-color: rgb(183, 255, 183)"> {{$data->status}}</td>
                                         <td>
-                                           <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                           <img class="img-fluid  mt-3 mb-4" style="width: 25rem;"
                                             src="{{asset('fotoKeterangan/'.$data->keterangan)}}" alt="..." data-toggle="modal" data-target="#ModalDetailClosed{{$data->id}}">
                                         </td>
                                         {{-- <td>
@@ -126,7 +126,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{asset('imgMobileSioktag/'.$item->sioktag->foto)}}" alt="foto">
+                                                    <img class="img-fluid  mt-3 mb-4" style="width: 25rem;" src="{{asset('imgMobileSioktag/'.$item->sioktag->foto)}}" alt="foto">
                                                 </div>
                                             </div>
                                         </div>

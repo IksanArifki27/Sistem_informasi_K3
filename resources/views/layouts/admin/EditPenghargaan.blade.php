@@ -71,9 +71,9 @@
                                     @php
                                         $no = 1;
                                     @endphp
-                                    @foreach ($datas as $data)      
+                                    @foreach ($datas as  $data)      
                                     <tr>
-                                        <td>{{$no++}} </td>
+                                        <td>{{$no++  }} </td>
                                         <td> <b>{{$data->judul}}</b> </td>
                                         <td>{{Str::limit($data->keterangan,150)}}</td>
                                         <td>

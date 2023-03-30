@@ -23,7 +23,7 @@ use function GuzzleHttp\Promise\all;
 class AdminController extends Controller
 {
     public function dashbord(){
-        // chart for data user
+        // chart total daftar pengguna perbulan
          $users = User::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
                     ->whereYear('created_at', date('Y'))
                     ->groupBy(DB::raw("month_name"))
@@ -35,8 +35,6 @@ class AdminController extends Controller
         $admin = User::where('level','admin')->count();
         $brg_masuk = BarangMasuk::count();
         $brg_keluar = BarangKeluar::count();
-
-        $hasaplash = BarangKeluar::where('barang_id','1')->count();
        
         // barang masuk perbulan
         $masuk_jan = BarangMasuk::whereMonth('created_at','01')->count();
@@ -74,8 +72,7 @@ class AdminController extends Controller
     }
 
     public function pagePerilaku(){
-      
-       
+
         return view('layouts.admin.PerilakuAman');
     }
 
@@ -85,17 +82,6 @@ class AdminController extends Controller
         return view('layouts.admin.percapaian',compact('data','total'));
     }
 
-    public function diagram(){
-       $users = User::select(DB::raw("COUNT(*) as count"), DB::raw("MONTHNAME(created_at) as month_name"))
-                    ->whereYear('created_at', date('Y'))
-                    ->groupBy(DB::raw("month_name"))
-                    ->orderBy('id','ASC')
-                    ->pluck('count', 'month_name');
- 
-        $labels = $users->keys();
-        $data = $users->values();
-        return view('layouts.admin.diagram',compact('labels','data'));
-    }
 
     public function isiP3K(Request $request){
         if ($request->has('search')) {
@@ -110,6 +96,7 @@ class AdminController extends Controller
     public function isip3k_dept(){
         return view('layouts.admin.isip3k_dept');
     }
+
     public function isip3k_Detail($id){
         $lokasi = Lokasi::find($id);
         $datas =  Barang::where('lokasi_id',$id)->get();
@@ -183,11 +170,13 @@ class AdminController extends Controller
         $data->update($request->all());
         return redirect('/editPenghargaan')->with('success','Data berhasil diupdate');
     }
+
     public function deletePenghargaan($id){
         $data = Penghargaan::find($id);
         $data->delete();
         return redirect('/editPenghargaan');
     }
+
      public function tabelPeringatanClosed(Request $request){
         // $datas = Sioktag::with('penyelesaian')->latest()->paginate(7);
         $datas = Penyelesaian::with('sioktag')->latest()->paginate(7);
@@ -196,7 +185,8 @@ class AdminController extends Controller
     }
 
     public function tabelPeringatan(){
-        $datas = Sioktag::paginate(7);
+        // menampilkan semua data android
+        $datas = Sioktag::latest()->paginate(7);
         return view('layouts.admin.tabelPeringatan',compact('datas'));
 
     }
