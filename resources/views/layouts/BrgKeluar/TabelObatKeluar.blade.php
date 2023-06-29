@@ -35,6 +35,21 @@
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">
 
+                        <form action="/filterKeluar" method="GET" class="d-flex justify-content-end my-3">
+
+                            <div class="col-md-3">
+                                <label >Tanggal Mulai : </label>
+                                <input type="date" name="start_date" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label >Tanggal Selesai : </label>
+                                <input type="date" name="end_date" class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" class="btn btn-primary mt-4">filter</button>
+                            </div>
+                        </form>
+
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered text-center">
                                 <thead style="text-align: center;">
@@ -60,14 +75,13 @@
                                         <td>{{$item->lokasi->nama}} </td>
                                         <td>{{$item->jumlah_barang_keluar}} </td>
                                         <td>{{$item->created_at->format('d-m-Y')}} </td>
-                                        
                                     </tr>
                                     @endforeach
                                     
                                                        
                                 </tbody> 
                             </table>  
-                             {{$brg_klr->links()}} 
+                             {{-- {{$brg_klr->links()}}  --}}
                         </div>     
                     </div>
 

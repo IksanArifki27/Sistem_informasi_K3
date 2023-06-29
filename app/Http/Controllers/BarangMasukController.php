@@ -40,4 +40,12 @@ class BarangMasukController extends Controller
         return redirect('/formTambah')->with('success','Tambah Stok Berhasil');
         // dd($barang);
     }
+    public function filterMasuk (Request $request){
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+         $brg_msk = BarangMasuk::whereDate('created_at','>=',$start_date)
+            ->whereDate('created_at','<=',$end_date)->get();
+         return view('layouts.BrgMasuk.TabelObatMasuk',compact('brg_msk'));
+
+    }
 }

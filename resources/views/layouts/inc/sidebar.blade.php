@@ -134,6 +134,7 @@
                 </div>
             </li>
             {{-- end --}}
+ 
             {{-- dropdown obat masuk & keluar --}}
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseObat"
@@ -147,6 +148,8 @@
                         <a class="collapse-item" href="/formTambah">Tambah Stock Obat</a>
                         <a class="collapse-item" href="/recordMasuk">Record Obat Masuk</a>
                         <a class="collapse-item" href="/recordKeluar">Record Obat Keluar</a>
+                        <a class="collapse-item" href="/lokasi">Tambah Lokasi Baru</a>
+                        <a class="collapse-item" href="/obat">Tambah Jenis Obat</a>
                     </div>
                 </div>
             </li>
@@ -165,6 +168,7 @@
                        <i class="fa fa-users" ></i>
                         <span>Data User</span></a>
                 </li>
+        
                 
                 @endif
 

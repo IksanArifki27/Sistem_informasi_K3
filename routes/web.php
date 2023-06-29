@@ -63,6 +63,12 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::get('/editPenghargaan',[AdminController::class,'editPenghargaan']);
     Route::post('/updatePenghargaan/{id}',[AdminController::class,'updatePenghargaan']);
     Route::get('/deletePenghargaan/{id}',[AdminController::class,'deletePenghargaan']);
+    // tambah lokasi
+    Route::get('/lokasi',[AdminController::class,'lokasi']);
+    Route::post('/createLokasi',[AdminController::class,'createLokasi']);
+    // tambah jenis obat
+    Route::get('/obat',[AdminController::class,'obat']);
+    Route::post('/createObat',[AdminController::class,'createObat']);
 
     // daftar User
     Route::get('/dataUser',[LoginController::class,'DataUser']);
@@ -78,6 +84,10 @@ Route::group(['middleware' => ['auth','CekLevel:admin']], function(){
     Route::get('formTambah/{id}',[BarangMasukController::class,'LokasiBarangId']);
     Route::post('/postStok',[BarangMasukController::class,'postStok']);
     Route::get('/recordMasuk',[BarangMasukController::class,'index']);
+
+    // filter record
+    Route::get('/filterKeluar',[BarangKeluarController::class,'filterKeluar'])->name('filterKeluar');
+    Route::get('/filterMasuk',[BarangMasukController::class,'filterMasuk'])->name('filterMasuk');
 
     // keluar Stok untuk admin & user
     Route::get('inputPemakaian',[BarangKeluarController::class,'index']);

@@ -41,4 +41,12 @@ class BarangKeluarController extends Controller
         }
 
     }
+    // record filter keluar
+    public function filterKeluar (Request $request){
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $brg_klr = BarangKeluar::whereDate('created_at','>=',$start_date)
+            ->whereDate('created_at','<=',$end_date)->get();
+        return view('layouts.BrgKeluar.TabelObatKeluar',compact('brg_klr'));
+    }
 }

@@ -190,6 +190,25 @@ class AdminController extends Controller
         return view('layouts.admin.tabelPeringatan',compact('datas'));
 
     }
+    // tambah lokasi Baru
+    public function lokasi(){
+        return view('layouts.admin.lokasi');
+    }
+
+    public function createLokasi(Request $request){
+        $lokasi = Lokasi::create($request->all());
+        
+        return redirect('/lokasi')->with('success','Berhasil Menambah lokasi');
+    }
+    // tambah jenis obat
+    public function obat(){
+        $lokasi = Lokasi::all();
+        return view('layouts.admin.Obat',compact('lokasi'));
+    }
+    public function createObat(Request $request){
+        $obat = Barang::create($request->all());
+        return redirect('/obat')->with('success','Berhasil menambahkan jenis obat baru! ');
+    }
   
 }
 

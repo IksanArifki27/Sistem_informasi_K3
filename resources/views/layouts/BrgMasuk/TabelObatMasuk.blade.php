@@ -35,7 +35,21 @@
 
                     <!-- PENGUMUMAN -->
                     <div class="card shadow mb-4">
+                        {{-- filter obat masuk --}}
+                         <form action="/filterMasuk" method="GET" class="d-flex justify-content-end my-3">
 
+                            <div class="col-md-3">
+                                <label >Tanggal Mulai : </label>
+                                <input type="date" name="start_date" class="form-control">
+                            </div>
+                            <div class="col-md-3">
+                                <label >Tanggal Selesai : </label>
+                                <input type="date" name="end_date" class="form-control">
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" class="btn btn-primary mt-4">filter</button>
+                            </div>
+                        </form>
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered text-center">
                                 <thead style="text-align: center;">
@@ -84,7 +98,8 @@
                                 </tbody> 
                             </table>  
                         </div> 
-                        {{$brg_msk->links()}}    
+
+                        {{-- {{$brg_msk->links()}}     --}}
                     </div>
 
             <!-- /.container-fluid -->
